@@ -19,11 +19,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-TwitterTests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-TwitterUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +32,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>55F64D26A82443E8B3317853E5A1D627</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BE3972E134D54BF0CCC4087A9A272686</key>
+		<key>37EBE0F3B507E288F4CF8396F97863E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
