@@ -30,6 +30,10 @@ class LoginViewController: UIViewController {
         twitterClient.fetchRequestToken(with: "oauth/request_token", method: "GET", callbackURL: nil, scope: nil, success: { (requestToken:
             BDBOAuth1Credential!) -> Void in
             print("I got a token!")
+            
+            let url = NSURL(string: "https://api.twitter.com/oauth/authorize")!
+            UIApplication.sharedApplication().openURL(url)
+            
         }) { (error: NSError!) -> Void in
             print("error: \(error.localizedDescription)")
         }
