@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
             BDBOAuth1Credential!) -> Void in
             print("I got a token!")
             
-            let url = NSURL(string: "https://api.twitter.com/oauth/authorize")!
+            let url = NSURL(string: "https://api.twitter.com/oauth/authorize?oauth_token\(requestToken.token)")!
             UIApplication.sharedApplication().openURL(url)
             
         }) { (error: NSError!) -> Void in
