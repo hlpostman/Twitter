@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BDBOAuth1Manager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -41,6 +42,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        print(url.description)
+        let requestToken = BDBOAuthCredential(queryString: url.query)
+        let twitterClient = BDBOAuth1SessionManager(baseURL: NSURL(string: "https://api.twitter.com")!, consumerKey: "UOgFeSdrTPCdG5aCPS933gOso", consumerSecret: "EoeUPlkFlicEdf28GLC8M28apkgkIkKHQPnzsTtcyUJP4IPJh")
+        twitterClient.fetchAccessToken(with: "oauth/access_token", method: "POST", requestToken: requestToken, success: { (accessToken:
+            BDBOAuth1Credential!) -> Void in
+            print("I got the access token, love the AppDelegate")
+            
+            // Continue with first vid at 22:35
+//            twitterClient.GET()
+            
+        }) { (error: NSWrror!) -> Void in
+            print("error: \(error.localizedDescription)")
+        }
+        return true
+    }
 }
 
