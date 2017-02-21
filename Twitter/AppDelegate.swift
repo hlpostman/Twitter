@@ -50,9 +50,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             BDBOAuth1Credential?) in
             print("I got the access token, love the AppDelegate")
             
-            // Continue with first vid at 22:35
-//            twitterClient.GET()
-            
+            twitterClient?.get("1.1/account/verify_credentials.json", parameters: nil, progress: nil, success: { (task: URLSessionDataTask, response:
+                Any?) -> Void in
+                print("Account: \(response)")
+                }, failure: { (task: URLSessionDataTask?, error: Error) -> Void in
+            })
         }) { (error: Error?) -> Void in
             print("error: \(error?.localizedDescription)")
         }
