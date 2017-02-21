@@ -53,7 +53,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             twitterClient?.get("1.1/account/verify_credentials.json", parameters: nil, progress: nil, success: { (task: URLSessionDataTask, response:
                 Any?) -> Void in
                 let user = response as? NSDictionary
-                print("name: \(user?["name"])")
+                print("user : \(user)")
+                print("\nname: \(user?["name"])")
+                print("screenname: \(user?["screen_name"])")
+                print("profile url: \(user?["profile_image_url_https"])")
+                print("description: \(user?["description"])\n")
                 }, failure: { (task: URLSessionDataTask?, error: Error) -> Void in
             })
             
