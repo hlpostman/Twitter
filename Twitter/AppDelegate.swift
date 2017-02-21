@@ -48,13 +48,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let twitterClient = BDBOAuth1SessionManager(baseURL: NSURL(string: "https://api.twitter.com")! as URL!, consumerKey: "UOgFeSdrTPCdG5aCPS933gOso", consumerSecret: "3EoeUPlkFlicEdf28GLC8M28apkgkIkKHQPnzsTtcyUJP4IPJh")
         twitterClient?.fetchAccessToken(withPath: "oauth/access_token", method: "POST", requestToken: requestToken, success: { (accessToken:
             BDBOAuth1Credential?) in
-            print("I got the access token, love the AppDelegate")
+            print("I got the access token! Love, AppDelegate")
             
             twitterClient?.get("1.1/account/verify_credentials.json", parameters: nil, progress: nil, success: { (task: URLSessionDataTask, response:
                 Any?) -> Void in
-                print("Account: \(response)")
+                let user = response as? NSDictionary
+                print("name: \(user?["name"])")
                 }, failure: { (task: URLSessionDataTask?, error: Error) -> Void in
             })
+            
+            twitterClient?.get("1.1/statuses/home_timeline.json", parameters: nil, progress: nil, success: { (task: URLSessionDataTask, response: Any?) -> Void in
+                let tweets = response as! [NSDictionary]
+                
+                for tweet in tweets {
+                    print("\(tweet["text"]!)")
+                }
+                }, failure: { (task: URLSessionDataTask?, error: Error) -> Void in
+                    
+                })
         }) { (error: Error?) -> Void in
             print("error: \(error?.localizedDescription)")
         }
