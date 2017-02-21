@@ -9,18 +9,18 @@
 import UIKit
 
 class User: NSObject {
-    var name: NSString?
-    var screenname: NSString?
+    var name: String?
+    var screenname: String?
     var profileURL: NSURL?
-    var tagline: NSString?
+    var tagline: String?
     
     init(dictionary: NSDictionary) {
-        name = dictionary["name"] as? NSString
-        screenname = dictionary["screen_name"] as? NSString
+        name = dictionary["name"] as? String
+        screenname = dictionary["screen_name"] as? String
         let profileUrlString = dictionary["profile_image_url_https"] as? String
         if let profileUrlString = profileUrlString {
             profileURL = NSURL(string: profileUrlString)
         }
-        tagline = dictionary["description"] as? NSString
+        tagline = dictionary["description"] as? String
     }
 }
