@@ -22,7 +22,7 @@
                                 <frame key="frameInset" minX="87" minY="496" width="200" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.29993207494973406" green="0.71837939141252405" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Twitter Log In"/>
+                                <state key="normal" title="Login with Twitter"/>
                                 <connections>
                                     <action selector="onLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IT8-G4-fwM"/>
                                 </connections>
