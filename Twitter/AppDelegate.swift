@@ -52,12 +52,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             twitterClient?.get("1.1/account/verify_credentials.json", parameters: nil, progress: nil, success: { (task: URLSessionDataTask, response:
                 Any?) -> Void in
-                let user = response as? NSDictionary
-                print("user : \(user)")
-                print("\nname: \(user?["name"])")
-                print("screenname: \(user?["screen_name"])")
-                print("profile url: \(user?["profile_image_url_https"])")
-                print("description: \(user?["description"])\n")
+                let userDictionary = response as? NSDictionary
+//                print("user : \(user)")
+                
+                let user = User(dictionary: userDictionary!)
+                print("\nname: \(user.name)")
+                print("screenname: \(user.screenname)")
+                print("profile url: \(user.profileURL)")
+                print("description: \(user.tagline)\n")
                 }, failure: { (task: URLSessionDataTask?, error: Error) -> Void in
             })
             
