@@ -20,10 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if User.currentUser != nil {
             print("There is a current user")
-        } else {
-            print("There is no current user")
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "TweetsNavigationController")
+            
+            window?.rootViewController = vc
+            
         }
-        
         return true
     }
 
