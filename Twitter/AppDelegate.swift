@@ -20,12 +20,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if User.currentUser != nil {
             print("There is a current user")
+ 
+//            The below commented lines are now in the tokenc request of the TwitterClient.  When they were here, after authorizing the app, the login page showed for a moment before showing the tweets view controller.
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "TweetsNavigationController")
+//            
+//            window?.rootViewController = vc
             
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "TweetsNavigationController")
-            
-            window?.rootViewController = vc
-            
+        }
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: User.logoutNotification), object: nil, queue: OperationQueue.main) { (NSNotification) -> Void in
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()
+        
+        self.window?.rootViewController = vc
         }
         return true
     }

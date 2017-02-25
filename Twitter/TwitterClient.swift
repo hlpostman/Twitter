@@ -28,11 +28,24 @@ class TwitterClient: BDBOAuth1SessionManager {
             let url = NSURL(string: "https://api.twitter.com/oauth/authorize?oauth_token=\(requestToken!.token!)")!
             UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
             
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "TweetsNavigationController")
+            var window: UIWindow?
+            window?.rootViewController = vc
+            
         }) { (error: Error?) -> Void in
             print("error: \(error!.localizedDescription)")
             self.loginFailure?(error!)
         }
     }
+    
+    func logout() {
+        User.currentUser = nil
+        deauthorize()
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: User.logoutNotification), object: nil)
+    }
+    
     
     func handleOpenUrl(url: URL) {
         let requestToken = BDBOAuth1Credential(queryString: url.query)

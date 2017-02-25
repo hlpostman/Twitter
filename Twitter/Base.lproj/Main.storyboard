@@ -62,7 +62,13 @@
                             <constraint firstItem="Enb-6I-Ll5" firstAttribute="top" secondItem="ofj-NR-nYx" secondAttribute="top" id="eXL-p5-5mA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Dgd-Z8-h5T"/>
+                    <navigationItem key="navigationItem" id="Dgd-Z8-h5T">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="lvf-MF-OLX">
+                            <connections>
+                                <action selector="onLogoutButton:" destination="UJO-zv-fEk" id="QBW-J6-a8N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lr4-fa-vxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
