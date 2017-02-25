@@ -54,11 +54,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="181" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Enb-6I-Ll5">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="181" id="Duc-I7-P8W">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="181" id="Duc-I7-P8W" customClass="TweetCell" customModule="Twitter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="375" height="181"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Duc-I7-P8W" id="5LH-xX-mOE">
-                                            <frame key="frameInset" width="375" height="180"/>
+                                            <frame key="frameInset" width="375" height="181"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fZV-Y0-UPB" userLabel="Profile Pic">
@@ -158,6 +158,19 @@
                                                 <constraint firstItem="cm8-q2-0Xr" firstAttribute="leading" secondItem="bC0-HD-aF1" secondAttribute="trailing" constant="8" id="ytM-To-yQt"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="handleLabel" destination="j39-T4-x3l" id="YsP-Ok-vRj"/>
+                                            <outlet property="likesCountLabel" destination="S0n-vp-JQ8" id="9q1-ip-aff"/>
+                                            <outlet property="likesIconImageView" destination="XtZ-ll-21N" id="T5j-9R-RyM"/>
+                                            <outlet property="nameLabel" destination="SNx-mf-wev" id="E8B-ri-7PU"/>
+                                            <outlet property="profilPicImageView" destination="fZV-Y0-UPB" id="Cs3-nd-hhL"/>
+                                            <outlet property="replyCountLabel" destination="cm8-q2-0Xr" id="kQb-3l-6Zk"/>
+                                            <outlet property="replyIconImageview" destination="bC0-HD-aF1" id="nzE-fp-Byc"/>
+                                            <outlet property="retweetCountLabel" destination="f97-hD-QRy" id="phm-ww-1aE"/>
+                                            <outlet property="retweetIconImageView" destination="O4y-2z-rvI" id="0hG-NC-ryn"/>
+                                            <outlet property="timeSincePostLabel" destination="64I-gB-ccd" id="Iy7-GW-Xur"/>
+                                            <outlet property="tweetTextLabel" destination="4Rv-9a-93w" id="zc7-Bt-G1q"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
