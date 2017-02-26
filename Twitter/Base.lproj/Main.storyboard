@@ -78,6 +78,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4I-Yw-hKn" userLabel="Dummy to constrain text to">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="49" id="NmQ-z3-ek4"/>
+                                                        <constraint firstAttribute="width" constant="252" id="SMh-Xn-6O1"/>
+                                                    </constraints>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNx-mf-wev" userLabel="Name Label">
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -113,13 +120,6 @@
                                                         <action selector="onRetweet:" destination="UJO-zv-fEk" eventType="touchUpInside" id="G2K-LE-I4v"/>
                                                     </connections>
                                                 </button>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4I-Yw-hKn" userLabel="Dummy to constrain text to">
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="49" id="NmQ-z3-ek4"/>
-                                                        <constraint firstAttribute="width" constant="252" id="SMh-Xn-6O1"/>
-                                                    </constraints>
-                                                </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adi-QX-SSK" userLabel="Like Button">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="c3y-9w-TJF"/>
