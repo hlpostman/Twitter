@@ -126,6 +126,10 @@
                                                         <constraint firstAttribute="width" constant="19" id="cUW-Nb-xoX"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="onLike:" destination="UJO-zv-fEk" eventType="touchUpInside" id="rLt-eH-OMZ"/>
+                                                        <action selector="onRetweet:" destination="UJO-zv-fEk" eventType="touchUpInside" id="ofz-4U-JcV"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f97-hD-QRy" userLabel="Retweet Label">
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
