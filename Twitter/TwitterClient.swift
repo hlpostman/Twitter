@@ -105,7 +105,17 @@ class TwitterClient: BDBOAuth1SessionManager {
             }
         )
     }
-
+    
+    func unretweet(id: Int, params: NSDictionary?, completion: @escaping (_ error: Error?) -> ()) {
+        post("1.1/statuses/unretweet/\(id).json", parameters: params, success: { (operation: URLSessionDataTask!, response: Any?) -> Void in
+            print("Unretweeted tweet with ide: \(id)")
+            completion(nil)
+            }, failure: { (operation: URLSessionDataTask?, error: error?) -> Void in
+                print("Error unretweeting")
+                completion(error as Error?)
+            }
+        )
+    }
 }
 
 
