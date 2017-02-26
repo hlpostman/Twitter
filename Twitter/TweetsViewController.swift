@@ -34,6 +34,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         })
         
         // Do any additional setup after loading the view.
+        
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,11 +63,20 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
 
-    
-
     @IBAction func onLogoutButton(_ sender: AnyObject) {
         TwitterClient.sharedInstance!.logout()
     }
+    
+    func onRetweet() {
+        
+    }
+    
+    func onLike() {
+        
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

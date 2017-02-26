@@ -17,9 +17,9 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var tweetTextLabel: UILabel!
     @IBOutlet weak var replyIconImageView: UIImageView!
     @IBOutlet weak var replyCountLabel: UILabel!
-    @IBOutlet weak var retweetIconImageView: UIImageView!
+    @IBOutlet weak var retweetButton: UIButton!
     @IBOutlet weak var retweetCountLabel: UILabel!
-    @IBOutlet weak var likesIconImageView: UIImageView!
+    @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likesCountLabel: UILabel!
     
     override func awakeFromNib() {
