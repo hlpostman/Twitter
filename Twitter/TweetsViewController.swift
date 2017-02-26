@@ -47,7 +47,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCell
         let tweet = tweets[indexPath.row]
         cell.nameLabel.text = tweet.user?.name!
-        cell.handleLabel.text = "@\(tweet.user?.screenname!)"
+        cell.handleLabel.text = "@\(tweet.user!.screenname!)"
         cell.tweetTextLabel.text = tweet.text!
         cell.profilPicImageView.setImageWith(tweet.user?.profileURL as! URL)
         cell.profilPicImageView.layer.cornerRadius = 2
