@@ -133,8 +133,8 @@
 				BE4D37151E5ACE2700354B5F /* AppDelegate.swift */,
 				BE881B711E5CF0E80021E2C1 /* API */,
 				BE881B701E5CF0DF0021E2C1 /* View Controllers */,
+				BE7FE4A61E6257E700CEF3A1 /* Views */,
 				BE4D37191E5ACE2700354B5F /* Main.storyboard */,
-				BE7FE4A41E6248E100CEF3A1 /* TweetCell.swift */,
 				BE881B6F1E5CF0D60021E2C1 /* Models */,
 				BE4D371C1E5ACE2700354B5F /* Assets.xcassets */,
 				BE4D371E1E5ACE2700354B5F /* LaunchScreen.storyboard */,
@@ -159,6 +159,14 @@
 				BE4D37371E5ACE2800354B5F /* Info.plist */,
 			);
 			path = TwitterUITests;
+			sourceTree = "<group>";
+		};
+		BE7FE4A61E6257E700CEF3A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE7FE4A41E6248E100CEF3A1 /* TweetCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		BE881B6F1E5CF0D60021E2C1 /* Models */ = {
