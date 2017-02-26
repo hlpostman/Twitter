@@ -55,9 +55,11 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        cell.replyIconImageView.setImageWith(<#T##url: URL##URL#>)
 
         cell.retweetCountLabel.text = String(tweet.retweetCount)
-        cell.retweetIconImageView.image = UIImage(named: "retweet-icon")
+        cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: .normal)
+        cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: .selected)
         cell.likesCountLabel.text = String(tweet.likeCount)
-        cell.likesIconImageView.image = UIImage(named: "favor-icon")
+        cell.likeButton.setImage(UIImage(named: "favor-icon") , for: .normal)
+        cell.likeButton.setImage(UIImage(named: "favor-icon-red"), for: .selected)
         
         
         return cell
