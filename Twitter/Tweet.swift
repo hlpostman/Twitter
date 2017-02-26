@@ -15,7 +15,8 @@ class Tweet: NSObject {
     var text: String?
     var retweetCount: Int = 0
     var likeCount: Int = 0
-    var timestamp: NSDate?
+    var rawTimestamp: Date?
+//    var formattedTimestamp: String
     var retweeted: Bool
     var liked: Bool
     
@@ -39,8 +40,10 @@ class Tweet: NSObject {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEE MM d HH:mm:ss Z y"
         if let timestampString = timestampString {
-            timestamp = formatter.date(from: timestampString) as NSDate?
-
+            rawTimestamp = formatter.date(from: timestampString)
+            print("🐠☀️\(rawTimestamp)\n\(formatter.string(from: rawTimestamp!))")
+//            formattedTimestamp = formatTimestamp(rawTimestamp!)
+//            print("Formatted timestamp: \(formattedTimestamp)")
         }
         
     }
@@ -55,4 +58,27 @@ class Tweet: NSObject {
         return tweets
     }
     
+    func formatTimestamp(_ rawTimestamp: Date) -> String {
+        let timeSince = abs(Int(rawTimestamp.timeIntervalSinceNow))
+        let largestUnitChar: String
+        let largestUnitMultiplier: Int
+        
+        if (timeSince <= 60) {
+            largestUnitChar = "s" // Seconds
+            largestUnitMultiplier = 1
+        } else if (timeSince/60 <= 60) {
+            largestUnitChar = "m" // Minutes
+            largestUnitMultiplier = 1/60
+        } else if (timeSince/60/60 <= 24) {
+            largestUnitChar = "h" // Hours
+            largestUnitMultiplier = 1/60/60
+        } else if (timeSince/60/60/24 <= 365) {
+            largestUnitChar = "d" // Days
+            largestUnitMultiplier = 1/60/60/24
+        } else {
+            largestUnitChar = "y" // Years
+            largestUnitMultiplier = 1/60/60/24/365
+        }
+        return "\(timeSince * largestUnitMultiplier)\(largestUnitChar)"
+    }
 }
