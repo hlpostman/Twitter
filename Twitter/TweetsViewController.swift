@@ -26,7 +26,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         TwitterClient.sharedInstance!.homeTimeline(success: { (tweets: [Tweet]) in
             
             self.tweets = tweets // self for persistence
-//            self.tableView.reloadData()
+            self.tableView.reloadData()
             print("I'm the tweets vc! XO")
             
             }, failure: { (error: Error?) -> () in
