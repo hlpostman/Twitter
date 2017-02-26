@@ -53,15 +53,15 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.profilPicImageView.layer.cornerRadius = 2
         cell.profilPicImageView.clipsToBounds = true
         cell.timeSincePostLabel.text = ""
-//        cell.replyCountLabel.text = 
+        cell.replyCountLabel.text = ""
 //        cell.replyIconImageView.setImageWith(<#T##url: URL##URL#>)
 
         cell.retweetCountLabel.text = String(tweet.retweetCount)
-        cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: .normal)
-        cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: .selected)
+//        cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: .normal)
+//        cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: .selected)
         cell.likesCountLabel.text = String(tweet.likeCount)
-        cell.likeButton.setImage(UIImage(named: "favor-icon") , for: .normal)
-        cell.likeButton.setImage(UIImage(named: "favor-icon-red"), for: .selected)
+//        cell.likeButton.setImage(UIImage(named: "favor-icon") , for: .normal)
+//        cell.likeButton.setImage(UIImage(named: "favor-icon-red"), for: .selected)
         
         
         return cell
