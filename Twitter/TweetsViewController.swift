@@ -90,7 +90,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
                 self.tableView.reloadData()
             }
-        } else if tweet.retweeted = true {
+        } else if tweet.retweeted == true {
                 TwitterClient.sharedInstance!.unretweet(id: path, params: nil, completion: { (error) -> () in
                     print("Unretweeting from TweetsViewController")
                     self.tweets![indexPath!.row].retweetCount -= 1
@@ -120,7 +120,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.tableView.reloadData()
             }
         } else if tweet.liked == true {
-            TwitterClient.sharedInstance!.unlike(id: path, params: nil, completion:  { (error) -> () in
+            TwitterClient.sharedInstance!.unLike(id: path, params: nil, completion:  { (error) -> () in
                 print("Unliking from TweetsViewController")
                 self.tweets![indexPath!.row].likeCount -= 1
                 tweet.liked = false

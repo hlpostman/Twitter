@@ -98,7 +98,7 @@ class TwitterClient: BDBOAuth1SessionManager {
     func retweet(id: Int, params: NSDictionary?, completion: @escaping (_ error: Error?) -> ()) {
         post("1.1/statuses/retweet/\(id).json", parameters: params, success: {(operation: URLSessionDataTask!, response: Any?) -> Void in
             print("Retweeted tweet with id: \(id)")
-            completeion(nil)
+            completion(nil)
             }, failure: { (operation: URLSessionDataTask?, error: Error!) -> Void in
                 print("Error retweeting")
                 completion(error as Error?)
@@ -110,7 +110,7 @@ class TwitterClient: BDBOAuth1SessionManager {
         post("1.1/statuses/unretweet/\(id).json", parameters: params, success: { (operation: URLSessionDataTask!, response: Any?) -> Void in
             print("Unretweeted tweet with ide: \(id)")
             completion(nil)
-            }, failure: { (operation: URLSessionDataTask?, error: error?) -> Void in
+            }, failure: { (operation: URLSessionDataTask?, error: Error?) -> Void in
                 print("Error unretweeting")
                 completion(error as Error?)
             }
@@ -118,7 +118,7 @@ class TwitterClient: BDBOAuth1SessionManager {
     }
     
     func like(id: Int, params: NSDictionary?, completion: @escaping (_ error: Error?) -> ()) {
-        post("1.1/favorites/create.json?id=\(id)", parameters: params, success: { (operation: URLSessionDataTask!, response: Any?) -> Void
+        post("1.1/favorites/create.json?id=\(id)", parameters: params, success: { (operation: URLSessionDataTask!, response: Any?) -> Void in
             print("Liked tweet with id: \(id)")
             completion(nil)
             }, failure: { (operation: URLSessionDataTask?, error: Error?) -> Void in
@@ -128,7 +128,7 @@ class TwitterClient: BDBOAuth1SessionManager {
     }
     
     func unLike(id: Int, params: NSDictionary?, completion: @escaping (_ error: Error?) -> ()) {
-        post("1.1/favorites/destroy.json?id=\(id)", parameters: params, success: { (operation: URLSessionDataTask!, response: Any?) -> Void
+        post("1.1/favorites/destroy.json?id=\(id)", parameters: params, success: { (operation: URLSessionDataTask!, response: Any?) -> Void in
             print("Unliked tweet with id: \(id)")
             completion(nil)
             }, failure: { (operation: URLSessionDataTask?, error: Error?) -> Void in
