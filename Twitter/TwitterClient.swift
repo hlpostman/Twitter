@@ -126,6 +126,16 @@ class TwitterClient: BDBOAuth1SessionManager {
                 completion(error as Error?)
         })
     }
+    
+    func unLike(id: Int, params: NSDictionary?, completion: @escaping (_ error: Error?) -> ()) {
+        post("1.1/favorites/destroy.json?id=\(id)", parameters: params, success: { (operation: URLSessionDataTask!, response: Any?) -> Void
+            print("Unliked tweet with id: \(id)")
+            completion(nil)
+            }, failure: { (operation: URLSessionDataTask?, error: Error?) -> Void in
+                print("Error unliking tweet with id: \(id)")
+                completion(error as Error?)
+        })
+    }
 }
 
 
