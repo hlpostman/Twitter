@@ -94,6 +94,17 @@ class TwitterClient: BDBOAuth1SessionManager {
                 failure(error)
         })
     }
+    
+    func retweet(id: Int, params: NSDictionary?, completion: @escaping (_ error: Error?) -> ()) {
+        post("1.1/statuses/retweet/\(id).json", parameters: params, success: {(operation: URLSessionDataTask!, response: Any?) -> Void in
+            print("Retweeted tweet with id: \(id)")
+            completeion(nil)
+            }, failure: { (operation: URLSessionDataTask?, error: Error!) -> Void in
+                print("Error retweeting")
+                completion(error as Error?)
+            }
+        )
+    }
 
 }
 
