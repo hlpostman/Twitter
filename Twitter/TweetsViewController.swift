@@ -100,18 +100,35 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             })
         }
     
-        
-        
-        
-        
-    
     }
     
-    func onLike() {
+    @IBAction func onLike(_ sender: AnyObject) {
+        let button = sender as! UIButton
+        let view = button.superview!
+        let cell = view.superview as! TweetCell
         
+        let indexPath = tableView.indexPath(for: cell)
+        let tweet = tweets![indexPath!.row]
+        
+        let path = tweet.id
+        if tweet.liked == false {
+            TwitterClient.sharedInstance!.like(id: path, params: nil) { (error) -> () in
+                print("Liking from TweetsViewController")
+                self.tweets![indexPath!.row].likeCount += 1
+                tweet.liked = true
+                cell.likeButton.setImage(UIImage(named: "favor-icon-red"), for: UIControlState())
+                self.tableView.reloadData()
+            }
+        } else if tweet.liked == true {
+            TwitterClient.sharedInstance!.unlike(id: path, params: nil, completion:  { (error) -> () in
+                print("Unliking from TweetsViewController")
+                self.tweets![indexPath!.row].likeCount -= 1
+                tweet.liked = false
+                cell.likeButton.setImage(UIImage(named: "favor-icon"), for: UIControlState())
+                self.tableView.reloadData()
+            })
+        }
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
