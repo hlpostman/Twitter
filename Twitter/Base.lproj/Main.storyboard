@@ -63,8 +63,8 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fZV-Y0-UPB" userLabel="Profile Pic">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="75" id="IA6-jN-nii"/>
-                                                        <constraint firstAttribute="height" constant="75" id="Uyt-FB-BeA"/>
+                                                        <constraint firstAttribute="width" constant="50" id="IA6-jN-nii"/>
+                                                        <constraint firstAttribute="height" constant="50" id="Uyt-FB-BeA"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bC0-HD-aF1" userLabel="Reply Icon">
