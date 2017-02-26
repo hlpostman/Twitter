@@ -17,6 +17,7 @@ class Tweet: NSObject {
     var likeCount: Int = 0
     var timestamp: NSDate?
     var retweeted: Bool
+    var liked: Bool
     
     init(dictionary: NSDictionary) {
         
@@ -30,6 +31,7 @@ class Tweet: NSObject {
         retweeted = dictionary["retweeted"] as! Bool
         retweetCount = (dictionary["retweet_count"] as? Int) ?? 0
         
+        liked = dictionary["favorited"] as! Bool
         likeCount = (dictionary["favourite_count"] as? Int) ?? 0
         
         // Timestamp
