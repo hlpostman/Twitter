@@ -60,6 +60,7 @@
 		BE4D37351E5ACE2800354B5F /* TwitterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterUITests.swift; sourceTree = "<group>"; };
 		BE4D37371E5ACE2800354B5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE4D37431E5AD0B600354B5F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BE695C4B1E62CB1700B65179 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ../../MyPlayground.playground; sourceTree = "<group>"; };
 		BE7FE4A41E6248E100CEF3A1 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		BE881B721E5CF1290021E2C1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BE881B741E5CF1350021E2C1 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
@@ -174,6 +175,7 @@
 			children = (
 				BE881B721E5CF1290021E2C1 /* User.swift */,
 				BE881B741E5CF1350021E2C1 /* Tweet.swift */,
+				BE695C4B1E62CB1700B65179 /* MyPlayground.playground */,
 			);
 			name = Models;
 			sourceTree = "<group>";

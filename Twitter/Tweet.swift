@@ -61,24 +61,24 @@ class Tweet: NSObject {
     func formatTimestamp(_ rawTimestamp: Date) -> String {
         let timeSince = abs(Int(rawTimestamp.timeIntervalSinceNow))
         let largestUnitChar: String
-        let largestUnitMultiplier: Int
+        let largestUnitDivisor: Int
         
         if (timeSince < 60) {
             largestUnitChar = "s" // Seconds
-            largestUnitMultiplier = 1
+            largestUnitDivisor = 1
         } else if (timeSince/60 <= 60) {
             largestUnitChar = "m" // Minutes
-            largestUnitMultiplier = 1/60
+            largestUnitDivisor = 60
         } else if (timeSince/60/60 <= 24) {
             largestUnitChar = "h" // Hours
-            largestUnitMultiplier = 1/60/60
+            largestUnitDivisor = 60 * 60
         } else if (timeSince/60/60/24 <= 365) {
             largestUnitChar = "d" // Days
-            largestUnitMultiplier = 1/60/60/24
+            largestUnitDivisor = 60 * 60 * 24
         } else {
             largestUnitChar = "y" // Years
-            largestUnitMultiplier = 1/60/60/24/365
+            largestUnitDivisor = 60 * 60 * 24 * 365
         }
-        return "\(timeSince * largestUnitMultiplier)\(largestUnitChar)"
+        return "\(timeSince / largestUnitDivisor)\(largestUnitChar)"
     }
 }

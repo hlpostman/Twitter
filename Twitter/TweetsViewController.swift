@@ -53,6 +53,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.profilPicImageView.layer.cornerRadius = 2
         cell.profilPicImageView.clipsToBounds = true
         cell.timeSincePostLabel.text = tweet.formatTimestamp(tweet.rawTimestamp!)
+//        print(cell.timeSincePostLabel.text, "and", tweet.rawTimestamp!)
         cell.replyCountLabel.text = ""
 //        cell.replyIconImageView.setImageWith(<#T##url: URL##URL#>)
 
