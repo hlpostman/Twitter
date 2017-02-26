@@ -109,6 +109,9 @@
                                                         <constraint firstAttribute="height" constant="25" id="Wmz-Xg-4eg"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="onRetweet:" destination="UJO-zv-fEk" eventType="touchUpInside" id="G2K-LE-I4v"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4I-Yw-hKn" userLabel="Dummy to constrain text to">
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
