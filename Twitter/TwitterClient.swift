@@ -116,6 +116,16 @@ class TwitterClient: BDBOAuth1SessionManager {
             }
         )
     }
+    
+    func like(id: Int, params: NSDictionary?, completion: @escaping (_ error: Error?) -> ()) {
+        post("1.1/favorites/create.json?id=\(id)", parameters: params, success: { (operation: URLSessionDataTask!, response: Any?) -> Void
+            print("Liked tweet with id: \(id)")
+            completion(nil)
+            }, failure: { (operation: URLSessionDataTask?, error: Error?) -> Void in
+                print("Error liking tweet with id: \(id)")
+                completion(error as Error?)
+        })
+    }
 }
 
 
