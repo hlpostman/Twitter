@@ -69,8 +69,42 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         TwitterClient.sharedInstance!.logout()
     }
     
-    func onRetweet() {
+
+    @IBAction func onRetweet(_ sender: AnyObject) {
+        let button = sender as! UIButton
+        let view = button.superview!
+        // Why are we able to get the cell from the superview with the line below?
+        let cell = view.superview as! TweetCell
+        // Specify a cell
+        let indexPath = tableView.indexPath(for: cell)
+        // Why do we unwrap tweets and indexPath in the line below but not in the cellForRowAt function above?
+        let tweet = tweets![indexPath!.row]
+        cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
         
+        let path = tweet.id
+        if tweet.retweeted == false {
+            TwitterClient.sharedInstance!.retweet(id: path, params: nil) { (error) -> () in
+                print("Retweeting from TweetsViewController")
+                self.tweets![indexPath!.row].retweetCount += 1
+                tweet.retweeted = true
+                cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
+                self.tableView.reloadData()
+            }
+        } else if tweet.retweeted = true {
+                TwitterClient.sharedInstance!.unretweet(id: path, params: nil, completion: { (error) -> () in
+                    print("Unretweeting from TweetsViewController")
+                    self.tweets![indexPath!.row].retweetCount -= 1
+                    tweet.retweeted = false
+                    cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
+                    self.tableView.reloadData()
+            })
+        }
+    
+        
+        
+        
+        
+    
     }
     
     func onLike() {
