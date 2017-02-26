@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -43,7 +44,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCell
         let tweet = tweets[indexPath.row]
-//        cell.tweetTextLabel.text = tweet.text!
+        cell.tweetTextLabel.text = tweet.text!
+        cell.
         return cell
     }
 

@@ -9,12 +9,16 @@
 import UIKit
 
 class Tweet: NSObject {
+    
+    var user: User?
     var text: String?
     var retweetCount: Int = 0
     var likeCount: Int = 0
     var timestamp: NSDate?
     
     init(dictionary: NSDictionary) {
+        
+        user = User(dictionary: dictionary["user"] as! NSDictionary)
         
         // Strings and Integers
         text = dictionary["text"] as?
