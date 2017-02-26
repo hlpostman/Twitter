@@ -63,7 +63,7 @@ class Tweet: NSObject {
         let largestUnitChar: String
         let largestUnitMultiplier: Int
         
-        if (timeSince <= 60) {
+        if (timeSince < 60) {
             largestUnitChar = "s" // Seconds
             largestUnitMultiplier = 1
         } else if (timeSince/60 <= 60) {
