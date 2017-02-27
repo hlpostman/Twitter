@@ -120,10 +120,10 @@
                                                         <action selector="onRetweet:" destination="UJO-zv-fEk" eventType="touchUpInside" id="G2K-LE-I4v"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adi-QX-SSK" userLabel="Like Button">
+                                                <button clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adi-QX-SSK" userLabel="Like Button">
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="25" id="c3y-9w-TJF"/>
-                                                        <constraint firstAttribute="width" constant="19" id="cUW-Nb-xoX"/>
+                                                        <constraint firstAttribute="height" constant="30" id="c3y-9w-TJF"/>
+                                                        <constraint firstAttribute="width" constant="30" id="cUW-Nb-xoX"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <connections>

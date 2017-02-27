@@ -57,18 +57,21 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.replyCountLabel.text = ""
 //        cell.replyIconImageView.setImageWith(<#T##url: URL##URL#>)
 
-        cell.retweetCountLabel.text = String(tweet.retweetCount)
+        // Set retweet icon
         if tweet.retweeted {
             cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
         } else {
             cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
         }
-//        cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: .normal)
-//        cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: .selected)
-        cell.likesCountLabel.text = String(tweet.likeCount)
-//        cell.likeButton.setImage(UIImage(named: "favor-icon") , for: .normal)
-//        cell.likeButton.setImage(UIImage(named: "favor-icon-red"), for: .selected)
+        cell.retweetCountLabel.text = String(tweet.retweetCount)
         
+        // Set like icon
+        if tweet.liked {
+            cell.likeButton.setImage(UIImage(named: "favor-icon-red"), for: UIControlState())
+        } else {
+            cell.likeButton.setImage(UIImage(named: "favor-icon"), for: UIControlState())
+        }
+        cell.likesCountLabel.text = String(tweet.likeCount)
         
         return cell
     }
@@ -123,7 +126,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print("Liking from TweetsViewController")
                 self.tweets![indexPath!.row].likeCount += 1
                 tweet.liked = true
-                cell.likeButton.setImage(UIImage(named: "favor-icon-red"), for: UIControlState())
+//                cell.likeButton.setImage(UIImage(named: "favor-icon-red"), for: UIControlState())
                 self.tableView.reloadData()
             }
         } else if tweet.liked == true {
@@ -131,7 +134,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print("Unliking from TweetsViewController")
                 self.tweets![indexPath!.row].likeCount -= 1
                 tweet.liked = false
-                cell.likeButton.setImage(UIImage(named: "favor-icon"), for: UIControlState())
+//                cell.likeButton.setImage(UIImage(named: "favor-icon"), for: UIControlState())
                 self.tableView.reloadData()
             })
         }
