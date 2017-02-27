@@ -58,7 +58,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="181"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Duc-I7-P8W" id="5LH-xX-mOE">
-                                            <frame key="frameInset" width="375" height="180"/>
+                                            <frame key="frameInset" width="375" height="180.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fZV-Y0-UPB" userLabel="Profile Pic">
@@ -110,17 +110,17 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8X-96-OIV" userLabel="Retweet Button">
+                                                <button clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8X-96-OIV" userLabel="Retweet Button">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="19" id="K3i-YR-H7A"/>
-                                                        <constraint firstAttribute="height" constant="25" id="Wmz-Xg-4eg"/>
+                                                        <constraint firstAttribute="width" constant="30" id="K3i-YR-H7A"/>
+                                                        <constraint firstAttribute="height" constant="30" id="Wmz-Xg-4eg"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <connections>
                                                         <action selector="onRetweet:" destination="UJO-zv-fEk" eventType="touchUpInside" id="G2K-LE-I4v"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adi-QX-SSK" userLabel="Like Button">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adi-QX-SSK" userLabel="Like Button">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="c3y-9w-TJF"/>
                                                         <constraint firstAttribute="width" constant="19" id="cUW-Nb-xoX"/>

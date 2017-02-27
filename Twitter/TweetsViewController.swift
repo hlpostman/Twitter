@@ -58,6 +58,11 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        cell.replyIconImageView.setImageWith(<#T##url: URL##URL#>)
 
         cell.retweetCountLabel.text = String(tweet.retweetCount)
+        if tweet.retweeted {
+            cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
+        } else {
+            cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
+        }
 //        cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: .normal)
 //        cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: .selected)
         cell.likesCountLabel.text = String(tweet.likeCount)
@@ -82,9 +87,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let indexPath = tableView.indexPath(for: cell)
         // Why do we unwrap tweets and indexPath in the line below but not in the cellForRowAt function above?
         let tweet = tweets![indexPath!.row]
-        cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
-        
         let path = tweet.id
+        
         if tweet.retweeted == false {
             TwitterClient.sharedInstance!.retweet(id: path, params: nil) { (error) -> () in
                 print("Retweeting from TweetsViewController")
@@ -98,7 +102,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     print("Unretweeting from TweetsViewController")
                     self.tweets![indexPath!.row].retweetCount -= 1
                     tweet.retweeted = false
-                    cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
+//                    cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
                     self.tableView.reloadData()
             })
         }
