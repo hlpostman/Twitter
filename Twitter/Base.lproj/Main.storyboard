@@ -51,14 +51,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQ0-fr-nft" userLabel="Tweet DetailView">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZL8-nT-Zv5" userLabel="Profile Pic DetailView">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="dcT-py-g3E"/>
+                                            <constraint firstAttribute="width" constant="50" id="sZ5-1W-RZf"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ZL8-nT-Zv5" firstAttribute="leading" secondItem="aQ0-fr-nft" secondAttribute="leading" constant="12" id="CmY-Y0-IuM"/>
+                                    <constraint firstAttribute="width" constant="300" id="GCJ-Dw-omz"/>
+                                    <constraint firstAttribute="height" constant="500" id="IQV-7r-SNa"/>
+                                    <constraint firstItem="ZL8-nT-Zv5" firstAttribute="top" secondItem="aQ0-fr-nft" secondAttribute="top" constant="20" id="ajk-N3-fWL"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="181" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Enb-6I-Ll5">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="181" id="Duc-I7-P8W" customClass="TweetCell" customModule="Twitter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="181"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="181"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Duc-I7-P8W" id="5LH-xX-mOE">
-                                            <frame key="frameInset" width="375" height="181"/>
+                                            <frame key="frameInset" width="375" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fZV-Y0-UPB" userLabel="Profile Pic">
@@ -188,6 +205,8 @@
                             <constraint firstAttribute="trailing" secondItem="Enb-6I-Ll5" secondAttribute="trailing" id="43R-8n-6m4"/>
                             <constraint firstItem="TPv-IA-E60" firstAttribute="top" secondItem="Enb-6I-Ll5" secondAttribute="bottom" id="BxD-RF-53A"/>
                             <constraint firstItem="Enb-6I-Ll5" firstAttribute="leading" secondItem="ofj-NR-nYx" secondAttribute="leading" id="VBq-VD-9gn"/>
+                            <constraint firstItem="aQ0-fr-nft" firstAttribute="centerX" secondItem="ofj-NR-nYx" secondAttribute="centerX" id="Yfk-Dk-scI"/>
+                            <constraint firstItem="aQ0-fr-nft" firstAttribute="centerY" secondItem="ofj-NR-nYx" secondAttribute="centerY" id="aSW-iV-kk5"/>
                             <constraint firstItem="Enb-6I-Ll5" firstAttribute="top" secondItem="ofj-NR-nYx" secondAttribute="top" id="eXL-p5-5mA"/>
                         </constraints>
                     </view>
