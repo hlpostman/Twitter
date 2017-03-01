@@ -13,11 +13,15 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var detailView: UIView!
+    
+    
     var tweets: [Tweet]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        detailView.isHidden = true
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
