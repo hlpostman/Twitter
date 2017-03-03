@@ -329,7 +329,7 @@
                                             <constraint firstAttribute="width" constant="30" id="kCm-ra-iVd"/>
                                             <constraint firstAttribute="height" constant="30" id="t8R-0K-HT7"/>
                                         </constraints>
-                                        <state key="normal" image="reply-icon"/>
+                                        <state key="normal" image="favor-icon"/>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZFy-J9-shg">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -426,10 +426,24 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="riX-7l-hoQ"/>
+                    <connections>
+                        <outlet property="bigLikesLabel" destination="mdg-bX-xZo" id="vwW-ch-B3T"/>
+                        <outlet property="bigRetweetsLabel" destination="ELn-Ql-OEO" id="Ns8-dj-2l8"/>
+                        <outlet property="followButton" destination="cXJ-LQ-7M1" id="sug-un-oAy"/>
+                        <outlet property="handleLabel" destination="umg-WL-Faw" id="FT1-PD-epb"/>
+                        <outlet property="likeButton" destination="osV-ZT-5zf" id="Qya-Bh-Lm5"/>
+                        <outlet property="nameLabel" destination="bQr-sI-muY" id="32I-mN-Grg"/>
+                        <outlet property="profilePicImageView" destination="0nd-UZ-V6m" id="Nzh-ZI-YWR"/>
+                        <outlet property="retweetButton" destination="qPm-iN-9eN" id="AnE-Zc-rQn"/>
+                        <outlet property="smallLikesCountLabel" destination="IQ3-Nv-zcE" id="QrI-rN-Ua3"/>
+                        <outlet property="smallRetweetCountLabel" destination="nVZ-MN-Bc2" id="V8W-HE-vuE"/>
+                        <outlet property="timestampLabel" destination="kwt-O3-hH0" id="xpL-73-cYq"/>
+                        <outlet property="tweetTextLabel" destination="GAB-JX-DSB" id="gzi-4F-jcT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1a5-XT-ZKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3580.5" y="122.5"/>
+            <point key="canvasLocation" x="3719" y="122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s2j-8e-j47">
@@ -470,6 +484,7 @@
     </scenes>
     <resources>
         <image name="TwitterLogo" width="120" height="120"/>
+        <image name="favor-icon" width="30" height="30"/>
         <image name="reply-icon" width="30" height="30"/>
         <image name="retweet-icon" width="30" height="30"/>
     </resources>

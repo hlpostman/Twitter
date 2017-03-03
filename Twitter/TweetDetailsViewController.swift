@@ -10,6 +10,23 @@ import UIKit
 
 class TweetDetailsViewController: UIViewController {
 
+    
+    @IBOutlet weak var followButton: UIButton!
+    @IBOutlet weak var profilePicImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var handleLabel: UILabel!
+    @IBOutlet weak var tweetTextLabel: UILabel!
+    @IBOutlet weak var bigRetweetsLabel: UILabel!
+    @IBOutlet weak var bigLikesLabel: UILabel!
+    @IBOutlet weak var timestampLabel: UILabel!
+    @IBOutlet weak var retweetButton: UIButton!
+    @IBOutlet weak var smallRetweetCountLabel: UILabel!
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var smallLikesCountLabel: UILabel!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
