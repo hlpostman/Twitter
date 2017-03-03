@@ -19,17 +19,47 @@ class TweetDetailsViewController: UIViewController {
     @IBOutlet weak var bigRetweetsLabel: UILabel!
     @IBOutlet weak var bigLikesLabel: UILabel!
     @IBOutlet weak var timestampLabel: UILabel!
+    @IBOutlet weak var replyCountLabel: UILabel!
     @IBOutlet weak var retweetButton: UIButton!
     @IBOutlet weak var smallRetweetCountLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var smallLikesCountLabel: UILabel!
     
-    
+    var tweet: Tweet!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        profilePicImageView.setImageWith(tweet.user?.profileURL as! URL)
+        nameLabel.text = tweet.user?.name!
+        handleLabel.text = tweet.user?.screenname!
+        tweetTextLabel.text = tweet.text!
+        profilePicImageView.layer.cornerRadius = 2
+        profilePicImageView.clipsToBounds = true
+        timestampLabel.text = tweet.formatTimestamp(tweet.rawTimestamp!)
+        replyCountLabel.text = ""
+        bigRetweetsLabel.text = String(tweet.retweetCount)
+        bigLikesLabel.text = String(tweet.likeCount)
+        smallRetweetCountLabel.text = String(tweet.retweetCount)
+        smallLikesCountLabel.text = String(tweet.likeCount)
+        
+        // Set retweet icon
+        if tweet.retweeted {
+            retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
+        } else {
+            retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
+        }
+        
+        
+        // Set like icon
+        if tweet.liked {
+            likeButton.setImage(UIImage(named: "favor-icon-red"), for: UIControlState())
+        } else {
+            likeButton.setImage(UIImage(named: "favor-icon"), for: UIControlState())
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
 

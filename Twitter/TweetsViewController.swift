@@ -150,12 +150,10 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPath(for: cell)
-            let tweetsData = tweets[(indexPath?.row)!]
-            
+            let tweetData = tweets[(indexPath?.row)!]
             let detailViewController = segue.destination as! TweetDetailsViewController
-            
-//            detailViewController.tweets = tweetsData
-            print("DID SEGUE")
+    
+            detailViewController.tweet = tweetData
             
         }
     }
