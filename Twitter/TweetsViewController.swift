@@ -13,15 +13,12 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
    
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var detailView: UIView!
-    
     
     var tweets: [Tweet]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        detailView.isHidden = true
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -31,15 +28,11 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             self.tweets = tweets // self for persistence
             self.tableView.reloadData()
-            print("I'm the tweets vc! XO")
+            print("I'm the tweets vc")
             
             }, failure: { (error: Error?) -> () in
                 print(error!.localizedDescription)
         })
-        
-        let tapToDismissDetailView: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideTweetDetail))
-        detailView.isUserInteractionEnabled = true
-        detailView.addGestureRecognizer(tapToDismissDetailView)
         
         // Do any additional setup after loading the view.
         
@@ -61,9 +54,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.profilPicImageView.layer.cornerRadius = 2
         cell.profilPicImageView.clipsToBounds = true
         cell.timeSincePostLabel.text = tweet.formatTimestamp(tweet.rawTimestamp!)
-//        print(cell.timeSincePostLabel.text, "and", tweet.rawTimestamp!)
         cell.replyCountLabel.text = ""
-//        cell.replyIconImageView.setImageWith(<#T##url: URL##URL#>)
 
         // Set retweet icon
         if tweet.retweeted {
@@ -81,45 +72,31 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         cell.likesCountLabel.text = String(tweet.likeCount)
         
-        // Tap to get detail
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showTweetDetail))
+        // Tap to go to details
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(popOverTweetDetail))
         cell.tag = indexPath.row
         cell.addGestureRecognizer(tap)
         return cell
     }
     
-    func showTweetDetail(_ sender: AnyObject) {
+    func popOverTweetDetail(_ sender: UITapGestureRecognizer) {
         print("😊💖")
+        self.performSegue(withIdentifier: "detailsViewSegue", sender: self)
         let indexPath = NSIndexPath(row: sender.view!.tag, section: 0)
         let sendingCell = tableView.cellForRow(at: indexPath as IndexPath) as! TweetCell
-//        detailView.isHidden = false
-        view.addSubview(detailView)
-        print("WELL DAMN CRAZY DIAMOND, sending cell is a tweet from \(sendingCell.nameLabel.text!) 😆")
-//        let tweet = sender as! TweetCell
-//        print("\(tweet.nameLabel.text!) DID IT")
-//        print("You tapped a tweet from \(sender.nameLabel.text!)")
+        print("Sending cell is a tweet from \(sendingCell.nameLabel.text!)")
     }
-
-    func hideTweetDetail() {
-        print("You called hideTweetDetail()")
-//        detailView.isHidden = true
-        detailView.removeFromSuperview()
-    }
-    
 
     @IBAction func onLogoutButton(_ sender: AnyObject) {
         TwitterClient.sharedInstance!.logout()
     }
     
-
     @IBAction func onRetweet(_ sender: AnyObject) {
         let button = sender as! UIButton
         let view = button.superview!
-        // Why are we able to get the cell from the superview with the line below?
         let cell = view.superview as! TweetCell
         // Specify a cell
         let indexPath = tableView.indexPath(for: cell)
-        // Why do we unwrap tweets and indexPath in the line below but not in the cellForRowAt function above?
         let tweet = tweets![indexPath!.row]
         let path = tweet.id
         
@@ -128,7 +105,6 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print("Retweeting from TweetsViewController")
                 self.tweets![indexPath!.row].retweetCount += 1
                 tweet.retweeted = true
-//                cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
                 self.tableView.reloadData()
             }
         } else if tweet.retweeted == true {
@@ -136,7 +112,6 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     print("Unretweeting from TweetsViewController")
                     self.tweets![indexPath!.row].retweetCount -= 1
                     tweet.retweeted = false
-//                    cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
                     self.tableView.reloadData()
             })
         }
@@ -157,7 +132,6 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print("Liking from TweetsViewController")
                 self.tweets![indexPath!.row].likeCount += 1
                 tweet.liked = true
-//                cell.likeButton.setImage(UIImage(named: "favor-icon-red"), for: UIControlState())
                 self.tableView.reloadData()
             }
         } else if tweet.liked == true {
@@ -165,7 +139,6 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print("Unliking from TweetsViewController")
                 self.tweets![indexPath!.row].likeCount -= 1
                 tweet.liked = false
-//                cell.likeButton.setImage(UIImage(named: "favor-icon"), for: UIControlState())
                 self.tableView.reloadData()
             })
         }
