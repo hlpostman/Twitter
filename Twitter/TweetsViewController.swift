@@ -13,7 +13,6 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
    
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var detailView: UIView!
     
     @IBOutlet weak var detailXib: DetailView!
     
@@ -22,7 +21,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        detailView.isHidden = true
+        detailXib.isHidden = true
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -38,17 +37,15 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print(error!.localizedDescription)
         })
         
-        let tapToDismissDetailView: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideTweetDetail))
-        detailView.isUserInteractionEnabled = true
-        detailView.addGestureRecognizer(tapToDismissDetailView)
+        // Gestures for detail view
+        let tapToDismissdetailXib: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideTweetDetail))
+        detailXib.isUserInteractionEnabled = true
+        detailXib.addGestureRecognizer(tapToDismissdetailXib)
+        let tapToRetweetFromdetailXib: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onRetweet(_:)))
+        let button = detailXib.retweetButton!
+        button.addGestureRecognizer(tapToRetweetFromdetailXib)
         
         // Do any additional setup after loading the view.
-//        if let detailView2 = Bundle.main.loadNibNamed("DetailView", owner: self, options: nil)?.first as? DetailView {
-//            self.view.addSubview(detailView2)
-//            print("BAM")
-//            detailView2.nameLabel.text = "SO AWESOME 😍"
-//        }
-        
         
     }
     
@@ -98,19 +95,19 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("😊💖")
         let indexPath = NSIndexPath(row: sender.view!.tag, section: 0)
         let sendingCell = tableView.cellForRow(at: indexPath as IndexPath) as! TweetCell
-//        detailView.isHidden = false
-        view.addSubview(detailView)
+        detailXib.isHidden = false
         print("WELL DAMN CRAZY DIAMOND, sending cell is a tweet from \(sendingCell.nameLabel.text!) 😆")
         detailXib.nameLabel.text = sendingCell.nameLabel.text
-//        let tweet = sender as! TweetCell
+//        detailXib.retweetButton.addGestureRecognizer()
+        //        let tweet = sender as! TweetCell
 //        print("\(tweet.nameLabel.text!) DID IT")
 //        print("You tapped a tweet from \(sender.nameLabel.text!)")
     }
 
     func hideTweetDetail() {
         print("You called hideTweetDetail()")
-//        detailView.isHidden = true
-        detailView.removeFromSuperview()
+        detailXib.isHidden = true
+//        detailXib.removeFromSuperview()
     }
     
 
@@ -120,33 +117,38 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
 
     @IBAction func onRetweet(_ sender: AnyObject) {
-        let button = sender as! UIButton
-        let view = button.superview!
-        // Why are we able to get the cell from the superview with the line below?
-        let cell = view.superview as! TweetCell
-        // Specify a cell
-        let indexPath = tableView.indexPath(for: cell)
-        // Why do we unwrap tweets and indexPath in the line below but not in the cellForRowAt function above?
-        let tweet = tweets![indexPath!.row]
-        let path = tweet.id
-        
-        if tweet.retweeted == false {
-            TwitterClient.sharedInstance!.retweet(id: path, params: nil) { (error) -> () in
-                print("Retweeting from TweetsViewController")
-                self.tweets![indexPath!.row].retweetCount += 1
-                tweet.retweeted = true
-//                cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
-                self.tableView.reloadData()
-            }
-        } else if tweet.retweeted == true {
-                TwitterClient.sharedInstance!.unretweet(id: path, params: nil, completion: { (error) -> () in
-                    print("Unretweeting from TweetsViewController")
-                    self.tweets![indexPath!.row].retweetCount -= 1
-                    tweet.retweeted = false
-//                    cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
+        if let button = sender as? UIButton {
+            let view = button.superview!
+            // Why are we able to get the cell from the superview with the line below?
+            let cell = view.superview as! TweetCell
+            // Specify a cell
+            let indexPath = tableView.indexPath(for: cell)
+            // Why do we unwrap tweets and indexPath in the line below but not in the cellForRowAt function above?
+            let tweet = tweets![indexPath!.row]
+            let path = tweet.id
+            
+            if tweet.retweeted == false {
+                TwitterClient.sharedInstance!.retweet(id: path, params: nil) { (error) -> () in
+                    print("Retweeting from TweetsViewController")
+                    self.tweets![indexPath!.row].retweetCount += 1
+                    tweet.retweeted = true
+    //                cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
                     self.tableView.reloadData()
-            })
+                }
+            } else if tweet.retweeted == true {
+                    TwitterClient.sharedInstance!.unretweet(id: path, params: nil, completion: { (error) -> () in
+                        print("Unretweeting from TweetsViewController")
+      
+                        self.tweets![indexPath!.row].retweetCount -= 1
+                        tweet.retweeted = false
+    //                    cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
+                        self.tableView.reloadData()
+                })
+            }
+        } else {
+            print("Can't cast sender as UIButton")
         }
+        
     
     }
     
