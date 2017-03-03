@@ -8,7 +8,20 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailView" customModule="Twitter" customModuleProvider="target">
             <connections>
-                <outlet property="nameLabel" destination="FFk-2U-7gj" id="Z5f-gd-9YO"/>
+                <outlet property="bigLikeCountLabel" destination="JhH-zD-9dI" id="TCf-t2-jSy"/>
+                <outlet property="bigRetweetCountLabel" destination="ILC-aJ-5jq" id="4kz-6v-6Z6"/>
+                <outlet property="handleLabel" destination="bY5-fH-FcX" id="IJV-Z6-ufA"/>
+                <outlet property="likeButton" destination="nCL-1z-Vh7" id="sUo-7u-ULy"/>
+                <outlet property="mainParentView" destination="o6F-sh-uFN" id="KdZ-Qe-nfl"/>
+                <outlet property="nameLabel" destination="FFk-2U-7gj" id="vhp-Ts-3lk"/>
+                <outlet property="profilePicImageView" destination="vW5-xk-fX0" id="EfO-nP-kYr"/>
+                <outlet property="replyButton" destination="BJn-XF-gky" id="4mw-RU-8os"/>
+                <outlet property="replyCountLabel" destination="bOX-eQ-V7P" id="UUF-Y0-aCo"/>
+                <outlet property="retweetButton" destination="kfq-Ao-uNF" id="leh-Kj-ZrN"/>
+                <outlet property="smallLikeCountLabel" destination="IMw-69-cBC" id="CSd-o2-RKr"/>
+                <outlet property="smallRetweetCountLabel" destination="l9g-jA-Lg1" id="uMu-zC-c6o"/>
+                <outlet property="timePostedLabel" destination="vaF-Qb-tHO" id="Vaf-oG-3Vt"/>
+                <outlet property="tweetTextLabel" destination="d8W-ot-tHV" id="Yxi-id-MVM"/>
                 <outlet property="view" destination="iN0-l3-epB" id="M9X-dy-DyK"/>
             </connections>
         </placeholder>
@@ -84,12 +97,12 @@
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILC-aJ-5jq" userLabel="RT Count Label DetailView">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILC-aJ-5jq" userLabel="Big Retweet Count Label DetailView">
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhH-zD-9dI" userLabel="Like Count Label DetailView">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhH-zD-9dI" userLabel="Big Like Count Label DetailView">
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -99,25 +112,19 @@
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9g-jA-Lg1">
-                            <frame key="frameInset" minX="181" minY="190" width="38" height="18"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOX-eQ-V7P">
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJn-XF-gky">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJn-XF-gky" userLabel="Reply Button">
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="7Nm-OA-3r4"/>
                                 <constraint firstAttribute="width" constant="30" id="ymK-A8-6P1"/>
                             </constraints>
                             <state key="normal" image="reply-icon"/>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfq-Ao-uNF">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOX-eQ-V7P" userLabel="Reply Count Label">
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfq-Ao-uNF" userLabel="Retweet Button">
                             <frame key="frameInset" minX="143" minY="184" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="11s-fe-uQj"/>
@@ -127,7 +134,13 @@
                             </constraints>
                             <state key="normal" image="retweet-icon"/>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCL-1z-Vh7">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9g-jA-Lg1" userLabel="Small Retweet Count Label">
+                            <frame key="frameInset" minX="181" minY="190" width="38" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCL-1z-Vh7" userLabel="Like Button">
                             <frame key="frameInset" minX="291" minY="184" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="cwJ-W9-fBn"/>
@@ -135,7 +148,7 @@
                             </constraints>
                             <state key="normal" image="reply-icon"/>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMw-69-cBC">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMw-69-cBC" userLabel="Small Like Count Label">
                             <frame key="frameInset" minX="329" minY="190" width="38" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
