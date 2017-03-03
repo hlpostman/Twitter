@@ -63,6 +63,41 @@ class TweetDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    
+    @IBAction func onRetweet(_ sender: AnyObject) {
+        let path = tweet.id
+        
+        if tweet.retweeted == false {
+            TwitterClient.sharedInstance!.retweet(id: path, params: nil) { (error) -> () in
+                print("Retweeting from TweetsDetailViewController")
+                self.tweet.retweetCount += 1
+                self.tweet.retweeted = true
+                // Reload data
+                self.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
+                self.bigRetweetsLabel.text = String(self.tweet.retweetCount)
+                self.smallRetweetCountLabel.text = String(self.tweet.retweetCount)
+
+            }
+        } else if tweet.retweeted == true {
+            TwitterClient.sharedInstance!.unretweet(id: path, params: nil, completion: { (error) -> () in
+                print("Unretweeting from TweetsDetailViewController")
+                self.tweet.retweetCount -= 1
+                self.tweet.retweeted = false
+                // Reload data
+                self.retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
+                self.bigRetweetsLabel.text = String(self.tweet.retweetCount)
+                self.smallRetweetCountLabel.text = String(self.tweet.retweetCount)
+            })
+        }
+    
+    }
+    
+    
+    
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
