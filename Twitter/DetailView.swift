@@ -6,21 +6,31 @@
 //  Copyright © 2017 HLPostman. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class DetailView: UIView {
 
     @IBOutlet weak var nameLabel: UILabel!
-//    @IBOutlet weak var view: UIView!
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        
-//        if let detailView = Bundle.main.loadNibNamed("DetailView", owner: self, options: nil)?.first as? DetailView {
-//            self.addSubview(detailView)
-//        }
-////        self.addSubview(self.view)
-//        self.view.frame = self.bounds
-//    }
+    @IBOutlet weak var view: UIView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        loadFromXib()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        loadFromXib()
+//        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func loadFromXib() -> Void {
+        Bundle.main.loadNibNamed("DetailView", owner: self, options: nil)
+        view.frame = self.frame
+        view.backgroundColor = UIColor.red
+        view.layoutIfNeeded()
+        self.addSubview(view)
+    }
 
 }

@@ -182,10 +182,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iEm-27-OPo" customClass="DetailView" customModule="Twitter" customModuleProvider="target">
-                                <frame key="frameInset" minX="67" minY="269" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iEm-27-OPo" customClass="DetailView" customModule="Twitter" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="324" id="Sw2-Fc-zFR"/>
+                                    <constraint firstAttribute="height" constant="500" id="ZB3-By-kGQ"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -194,6 +196,8 @@
                             <constraint firstItem="TPv-IA-E60" firstAttribute="top" secondItem="Enb-6I-Ll5" secondAttribute="bottom" id="BxD-RF-53A"/>
                             <constraint firstItem="Enb-6I-Ll5" firstAttribute="leading" secondItem="ofj-NR-nYx" secondAttribute="leading" id="VBq-VD-9gn"/>
                             <constraint firstItem="Enb-6I-Ll5" firstAttribute="top" secondItem="ofj-NR-nYx" secondAttribute="top" id="eXL-p5-5mA"/>
+                            <constraint firstItem="iEm-27-OPo" firstAttribute="centerY" secondItem="ofj-NR-nYx" secondAttribute="centerY" id="k6W-7K-Hnn"/>
+                            <constraint firstItem="iEm-27-OPo" firstAttribute="centerX" secondItem="ofj-NR-nYx" secondAttribute="centerX" id="prh-Og-5WK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dgd-Z8-h5T">
@@ -205,6 +209,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailView" destination="rEz-M0-HNi" id="AMu-ye-Yy9"/>
+                        <outlet property="detailXib" destination="iEm-27-OPo" id="vmu-Xp-fH6"/>
                         <outlet property="tableView" destination="Enb-6I-Ll5" id="4s3-dy-i7H"/>
                     </connections>
                 </viewController>
@@ -325,10 +330,10 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <prototypes>
                                 <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="h3m-vv-IMg">
-                                    <rect key="frame" x="0.0" y="28" width="324" height="44"/>
+                                    <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h3m-vv-IMg" id="dXq-7a-9Oy">
-                                        <frame key="frameInset" width="324" height="43"/>
+                                        <frame key="frameInset" width="1000" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </tableViewCellContentView>
                                 </tableViewCell>

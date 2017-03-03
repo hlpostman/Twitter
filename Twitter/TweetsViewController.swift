@@ -15,6 +15,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var detailView: UIView!
     
+    @IBOutlet weak var detailXib: DetailView!
     
     var tweets: [Tweet]!
     
@@ -42,11 +43,11 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         detailView.addGestureRecognizer(tapToDismissDetailView)
         
         // Do any additional setup after loading the view.
-        if let detailView2 = Bundle.main.loadNibNamed("DetailView", owner: self, options: nil)?.first as? DetailView {
-            self.view.addSubview(detailView2)
-            print("BAM")
-            detailView2.nameLabel.text = "SO AWESOME 😍"
-        }
+//        if let detailView2 = Bundle.main.loadNibNamed("DetailView", owner: self, options: nil)?.first as? DetailView {
+//            self.view.addSubview(detailView2)
+//            print("BAM")
+//            detailView2.nameLabel.text = "SO AWESOME 😍"
+//        }
         
         
     }
@@ -100,6 +101,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        detailView.isHidden = false
         view.addSubview(detailView)
         print("WELL DAMN CRAZY DIAMOND, sending cell is a tweet from \(sendingCell.nameLabel.text!) 😆")
+        detailXib.nameLabel.text = sendingCell.nameLabel.text
 //        let tweet = sender as! TweetCell
 //        print("\(tweet.nameLabel.text!) DID IT")
 //        print("You tapped a tweet from \(sender.nameLabel.text!)")
