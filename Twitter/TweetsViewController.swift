@@ -56,6 +56,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.timeSincePostLabel.text = tweet.formatTimestamp(tweet.rawTimestamp!)
         cell.replyCountLabel.text = ""
 
+        cell.selectionStyle = .none
+        
         // Set retweet icon
         if tweet.retweeted {
             cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
