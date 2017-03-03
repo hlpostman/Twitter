@@ -92,6 +92,32 @@ class TweetDetailsViewController: UIViewController {
     
     }
     
+    @IBAction func onLike(_ sender: AnyObject) {
+        
+        let path = tweet.id
+        if tweet.liked == false {
+            TwitterClient.sharedInstance!.like(id: path, params: nil) { (error) -> () in
+                print("Liking from TweetsDetailViewController")
+                self.tweet.likeCount += 1
+                self.tweet.liked = true
+                // Reload data
+                self.likeButton.setImage(UIImage(named: "facor-icon-red"), for: UIControlState())
+                self.bigLikesLabel.text = String(self.tweet.likeCount)
+                self.smallLikesCountLabel.text = String(self.tweet.likeCount)
+                
+            }
+        } else if tweet.liked == true {
+            TwitterClient.sharedInstance!.unLike(id: path, params: nil, completion:  { (error) -> () in
+                print("Unliking from TweetsDetailViewController")
+                self.tweet.likeCount -= 1
+                self.tweet.liked = false
+                // Reload data
+                self.likeButton.setImage(UIImage(named: "favor-icon"), for: UIControlState())
+                self.bigLikesLabel.text = String(self.tweet.likeCount)
+                self.smallLikesCountLabel.text = String(self.tweet.likeCount)
+            })
+        }
+    }
     
     
     

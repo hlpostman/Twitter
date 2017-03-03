@@ -333,6 +333,9 @@
                                             <constraint firstAttribute="height" constant="30" id="t8R-0K-HT7"/>
                                         </constraints>
                                         <state key="normal" image="favor-icon"/>
+                                        <connections>
+                                            <action selector="onLike:" destination="kUC-rx-oyB" eventType="touchUpInside" id="hX2-up-2vo"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQ3-Nv-zcE">
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
