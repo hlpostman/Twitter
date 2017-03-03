@@ -21,7 +21,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        detailView.isHidden = true
+//        detailView.isHidden = true
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -92,7 +92,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("😊💖")
         let indexPath = NSIndexPath(row: sender.view!.tag, section: 0)
         let sendingCell = tableView.cellForRow(at: indexPath as IndexPath) as! TweetCell
-        detailView.isHidden = false
+//        detailView.isHidden = false
+        view.addSubview(detailView)
         print("WELL DAMN CRAZY DIAMOND, sending cell is a tweet from \(sendingCell.nameLabel.text!) 😆")
 //        let tweet = sender as! TweetCell
 //        print("\(tweet.nameLabel.text!) DID IT")
@@ -101,7 +102,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func hideTweetDetail() {
         print("You called hideTweetDetail()")
-        detailView.isHidden = true
+//        detailView.isHidden = true
+        detailView.removeFromSuperview()
     }
     
 
