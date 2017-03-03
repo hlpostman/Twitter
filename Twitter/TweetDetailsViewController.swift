@@ -33,7 +33,7 @@ class TweetDetailsViewController: UIViewController {
         
         profilePicImageView.setImageWith(tweet.user?.profileURL as! URL)
         nameLabel.text = tweet.user?.name!
-        handleLabel.text = tweet.user?.screenname!
+        handleLabel.text = "@\(tweet.user?.screenname!)"
         tweetTextLabel.text = tweet.text!
         profilePicImageView.layer.cornerRadius = 2
         profilePicImageView.clipsToBounds = true
