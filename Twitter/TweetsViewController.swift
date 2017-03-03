@@ -73,19 +73,19 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.likesCountLabel.text = String(tweet.likeCount)
         
         // Tap to go to details
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(popOverTweetDetail))
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(popOverTweetDetail))
         cell.tag = indexPath.row
-        cell.addGestureRecognizer(tap)
+//        cell.addGestureRecognizer(tap)
         return cell
     }
     
-    func popOverTweetDetail(_ sender: UITapGestureRecognizer) {
-        print("😊💖")
-        self.performSegue(withIdentifier: "detailsViewSegue", sender: self)
-        let indexPath = NSIndexPath(row: sender.view!.tag, section: 0)
-        let sendingCell = tableView.cellForRow(at: indexPath as IndexPath) as! TweetCell
-        print("Sending cell is a tweet from \(sendingCell.nameLabel.text!)")
-    }
+//    func popOverTweetDetail(_ sender: UITapGestureRecognizer) {
+//        print("Getting detail view")
+//        self.performSegue(withIdentifier: "detailsViewSegue", sender: self)
+//        let indexPath = NSIndexPath(row: sender.view!.tag, section: 0)
+//        let sendingCell = tableView.cellForRow(at: indexPath as IndexPath) as! TweetCell
+//        print("Sending cell is a tweet from \(sendingCell.nameLabel.text!)")
+//    }
 
     @IBAction func onLogoutButton(_ sender: AnyObject) {
         TwitterClient.sharedInstance!.logout()
@@ -141,6 +141,22 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 tweet.liked = false
                 self.tableView.reloadData()
             })
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "detailViewSegue") {
+            
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPath(for: cell)
+            let tweetsData = tweets[(indexPath?.row)!]
+            
+            let detailViewController = segue.destination as! TweetDetailsViewController
+            
+//            detailViewController.tweets = tweetsData
+            print("DID SEGUE")
+            
         }
     }
     

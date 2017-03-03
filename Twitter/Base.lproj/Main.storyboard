@@ -178,6 +178,7 @@
                                             <outlet property="retweetCountLabel" destination="f97-hD-QRy" id="phm-ww-1aE"/>
                                             <outlet property="timeSincePostLabel" destination="64I-gB-ccd" id="Iy7-GW-Xur"/>
                                             <outlet property="tweetTextLabel" destination="4Rv-9a-93w" id="zc7-Bt-G1q"/>
+                                            <segue destination="kUC-rx-oyB" kind="show" identifier="detailViewSegue" id="xVj-RG-O9D"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -206,10 +207,10 @@
             </objects>
             <point key="canvasLocation" x="2444" y="122.78860569715144"/>
         </scene>
-        <!--Details View Controller-->
+        <!--Tweet Details View Controller-->
         <scene sceneID="RLS-uH-IAw">
             <objects>
-                <viewController id="kUC-rx-oyB" customClass="DetailsViewController" sceneMemberID="viewController">
+                <viewController id="kUC-rx-oyB" customClass="TweetDetailsViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2wH-Ap-cHG"/>
                         <viewControllerLayoutGuide type="bottom" id="qUk-Zz-HIQ"/>
@@ -424,10 +425,11 @@
                             <constraint firstItem="lNl-hy-BsZ" firstAttribute="centerY" secondItem="DNI-8b-3Gw" secondAttribute="centerY" id="Qj6-TE-y13"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="riX-7l-hoQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1a5-XT-ZKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2444" y="815"/>
+            <point key="canvasLocation" x="3580.5" y="122.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s2j-8e-j47">
@@ -447,10 +449,31 @@
             </objects>
             <point key="canvasLocation" x="1720.8" y="122.78860569715144"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CGB-sQ-5KL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ViU-ig-7DO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vQl-gV-Vf7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kUC-rx-oyB" kind="relationship" relationship="rootViewController" id="fgX-aw-Voc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oBN-p7-IuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2993.5" y="122.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="TwitterLogo" width="120" height="120"/>
         <image name="reply-icon" width="30" height="30"/>
         <image name="retweet-icon" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="xVj-RG-O9D"/>
+    </inferredMetricsTieBreakers>
 </document>
