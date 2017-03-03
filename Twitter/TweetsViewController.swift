@@ -36,6 +36,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }, failure: { (error: Error?) -> () in
                 print(error!.localizedDescription)
         })
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showTweetDetail))
         
         // Do any additional setup after loading the view.
         
@@ -77,7 +78,23 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         cell.likesCountLabel.text = String(tweet.likeCount)
         
+        // Tap to get detail
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showTweetDetail))
+        cell.tag = indexPath.row
+        cell.addGestureRecognizer(tap)
         return cell
+    }
+    
+
+    
+    func showTweetDetail(_ sender: AnyObject) {
+        print("😊💖")
+        let indexPath = NSIndexPath(row: sender.view!.tag, section: 0)
+        let sendingCell = tableView.cellForRow(at: indexPath as IndexPath) as! TweetCell
+        print("WELL DAMN CRAZY DIAMOND, sending cell is a tweet from \(sendingCell.nameLabel.text!) 😆")
+//        let tweet = sender as! TweetCell
+//        print("\(tweet.nameLabel.text!) DID IT")
+//        print("You tapped a tweet from \(sender.nameLabel.text!)")
     }
 
     @IBAction func onLogoutButton(_ sender: AnyObject) {
