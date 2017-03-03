@@ -42,6 +42,11 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         detailView.addGestureRecognizer(tapToDismissDetailView)
         
         // Do any additional setup after loading the view.
+        if let detailView2 = Bundle.main.loadNibNamed("DetailView", owner: self, options: nil)?.first as? DetailView {
+            self.view.addSubview(detailView2)
+            print("BAM")
+            detailView2.nameLabel.text = "SO AWESOME 😍"
+        }
         
         
     }

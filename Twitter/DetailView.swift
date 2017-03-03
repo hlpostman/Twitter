@@ -10,12 +10,17 @@ import UIKit
 
 class DetailView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    @IBOutlet weak var nameLabel: UILabel!
+//    @IBOutlet weak var view: UIView!
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        
+//        if let detailView = Bundle.main.loadNibNamed("DetailView", owner: self, options: nil)?.first as? DetailView {
+//            self.addSubview(detailView)
+//        }
+////        self.addSubview(self.view)
+//        self.view.frame = self.bounds
+//    }
 
 }
