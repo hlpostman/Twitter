@@ -252,22 +252,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nww-Qz-Vj3" userLabel="Followers Header Label">
-                                <frame key="frameInset" minX="253" minY="473" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nww-Qz-Vj3" userLabel="Followers Header Label">
+                                <frame key="frameInset" minX="253" minY="473" width="73" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0Z-fG-HfR" userLabel="Following Header Label">
-                                <frame key="frameInset" minX="170" minY="472" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Following" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0Z-fG-HfR" userLabel="Following Header Label">
+                                <frame key="frameInset" minX="170" minY="472" width="73" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etV-15-UEW" userLabel="Total Tweets Header Label">
-                                <frame key="frameInset" minX="98" minY="473" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tweets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etV-15-UEW" userLabel="Total Tweets Header Label">
+                                <frame key="frameInset" minX="98" minY="473" width="55" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -300,6 +300,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xld-WW-GwZ"/>
+                    <connections>
+                        <outlet property="bannerImageView" destination="niB-7R-9dF" id="ABC-hM-GsM"/>
+                        <outlet property="descriptionLabel" destination="hsV-fs-EOQ" id="5if-BG-K8r"/>
+                        <outlet property="followerCountLabel" destination="zBf-I2-b5Q" id="Nm1-9U-DQD"/>
+                        <outlet property="followingCountLabel" destination="vBv-0j-RhC" id="MfU-8Q-BIz"/>
+                        <outlet property="handleLabel" destination="ZaK-kr-b9g" id="wbT-Iv-xwE"/>
+                        <outlet property="nameLabel" destination="AND-8V-4Jt" id="aTa-rs-a0i"/>
+                        <outlet property="profilePicImageView" destination="ajI-v4-kqR" id="TgR-lA-h0F"/>
+                        <outlet property="totalTweetsCountLabel" destination="TcU-f9-mFR" id="Zd0-sW-2E1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p96-Ja-x1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
