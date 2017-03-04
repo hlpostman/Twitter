@@ -58,7 +58,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="181"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Duc-I7-P8W" id="5LH-xX-mOE">
-                                            <frame key="frameInset" width="375" height="180"/>
+                                            <frame key="frameInset" width="375" height="181"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fZV-Y0-UPB" userLabel="Profile Pic">
@@ -206,6 +206,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lr4-fa-vxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2444" y="122.78860569715144"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="YOp-tt-Phm">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="cgf-Qq-MAU" customClass="ProfileViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OpT-qz-joz"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gxs-o6-bd6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2L7-cL-Eji">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🍟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVU-as-Mls">
+                                <frame key="frameInset" minX="176" minY="303" width="23" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xld-WW-GwZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p96-Ja-x1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4624.8000000000002" y="529.38530734632684"/>
         </scene>
         <!--Tweet Details View Controller-->
         <scene sceneID="RLS-uH-IAw">
@@ -433,7 +461,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1a5-XT-ZKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3719" y="122"/>
+            <point key="canvasLocation" x="4102" y="-333"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s2j-8e-j47">
@@ -469,7 +497,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBN-p7-IuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2993.5" y="122.5"/>
+            <point key="canvasLocation" x="3366" y="-333"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mFs-70-72U">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ex8-lE-9a8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wTr-aX-3yp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cgf-Qq-MAU" kind="relationship" relationship="rootViewController" id="lBf-6P-bnc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ddr-I0-NhK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3876" y="529"/>
         </scene>
     </scenes>
     <resources>
@@ -479,6 +525,6 @@
         <image name="retweet-icon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xVj-RG-O9D"/>
+        <segue reference="fgX-aw-Voc"/>
     </inferredMetricsTieBreakers>
 </document>

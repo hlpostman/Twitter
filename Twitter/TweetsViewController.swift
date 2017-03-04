@@ -52,6 +52,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCell
+        
+        // Configure cell
         let tweet = tweets[indexPath.row]
         cell.nameLabel.text = tweet.user?.name!
         cell.handleLabel.text = "@\(tweet.user!.screenname!)"
@@ -80,10 +82,9 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         cell.likesCountLabel.text = String(tweet.likeCount)
         
-        // Tap to go to details
-//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(popOverTweetDetail))
+        // Set delegate for profile tap
+        cell.delegate = self
         cell.tag = indexPath.row
-//        cell.addGestureRecognizer(tap)
         return cell
     }
     
@@ -182,4 +183,14 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     */
 
+}
+
+extension TweetsViewController: TweetTableViewCellDelegate{
+    func profileImageViewTapped(cell: TweetCell, user: User) {
+        let storyboard = UIStoryboard(name: "main", bundle: nil)
+        if let profileVC = storyboard.instantiateViewController(withIdentifier: "ProfileViewController" ) as? ProfileViewController {
+            profileVC.user = user //set the profile user before your push
+            self.navigationController?.pushViewController(profileVC, animated: true)
+        }
+    }
 }
