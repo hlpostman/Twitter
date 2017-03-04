@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController {
         // Strings
         nameLabel.text = user.name!
         handleLabel.text = "@\(user.screenname!)"
-        descriptionLabel.text = user.description
+        descriptionLabel.text = user.tagline!
         
         // Numbers
         totalTweetsCountLabel.text = String(user.tweetsCount)
