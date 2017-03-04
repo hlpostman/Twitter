@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController {
        
         // Strings
         nameLabel.text = user.name!
-        handleLabel.text = user.screenname!
+        handleLabel.text = "@\(user.screenname!)"
         descriptionLabel.text = user.description
         
         // Numbers
