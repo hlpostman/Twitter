@@ -188,7 +188,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 extension TweetsViewController: TweetTableViewCellDelegate{
     func profileImageViewTapped(cell: TweetCell, user: User) {
-        let storyboard = UIStoryboard(name: "main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let profileVC = storyboard.instantiateViewController(withIdentifier: "ProfileViewController" ) as? ProfileViewController {
             profileVC.user = user //set the profile user before your push
             self.navigationController?.pushViewController(profileVC, animated: true)
