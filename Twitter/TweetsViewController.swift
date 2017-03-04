@@ -55,6 +55,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Configure cell
         let tweet = tweets[indexPath.row]
+        cell.tweet = tweet
         cell.nameLabel.text = tweet.user?.name!
         cell.handleLabel.text = "@\(tweet.user!.screenname!)"
         cell.tweetTextLabel.text = tweet.text!

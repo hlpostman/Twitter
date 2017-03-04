@@ -12,7 +12,7 @@ protocol TweetTableViewCellDelegate: class  {
     func profileImageViewTapped(cell: TweetCell, user: User)
 }
 class TweetCell: UITableViewCell {
-
+    var tweet: Tweet!
     @IBOutlet weak var profilPicImageView: UIImageView! {
         didSet{
             self.profilPicImageView.isUserInteractionEnabled = true //make sure this is enabled
@@ -41,7 +41,7 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var likesCountLabel: UILabel!
     
     weak var delegate: TweetTableViewCellDelegate?
-    var tweet: Tweet!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
