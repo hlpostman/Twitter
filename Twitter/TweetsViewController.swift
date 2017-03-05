@@ -57,33 +57,22 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Configure cell
         let tweet = tweets[indexPath.row]
         cell.commonInit(tweet: tweet)
-//        cell.tweet = tweet
-//        cell.nameLabel.text = tweet.user?.name!
-//        cell.handleLabel.text = "@\(tweet.user!.screenname!)"
-//        cell.tweetTextLabel.text = tweet.text!
-//        cell.profilPicImageView.setImageWith(tweet.user?.profileURL as! URL)
-//        cell.profilPicImageView.layer.cornerRadius = 2
-//        cell.profilPicImageView.clipsToBounds = true
-//        cell.timeSincePostLabel.text = tweet.formatTimestamp(tweet.rawTimestamp!)
-//        cell.replyCountLabel.text = ""
-//
+
         cell.selectionStyle = .none
         
 //        // Set retweet icon
-//        if tweet.retweeted {
-//            cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
-//        } else {
-//            cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
-//        }
-//        cell.retweetCountLabel.text = String(tweet.retweetCount)
-//        
+        if tweet.retweeted {
+            cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
+        } else {
+            cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
+        }
+
 //        // Set like icon
-//        if tweet.liked {
-//            cell.likeButton.setImage(UIImage(named: "favor-icon-red"), for: UIControlState())
-//        } else {
-//            cell.likeButton.setImage(UIImage(named: "favor-icon"), for: UIControlState())
-//        }
-//        cell.likesCountLabel.text = String(tweet.likeCount)
+        if tweet.liked {
+            cell.likeButton.setImage(UIImage(named: "favor-icon-red"), for: UIControlState())
+        } else {
+            cell.likeButton.setImage(UIImage(named: "favor-icon"), for: UIControlState())
+        }
         
         // Set delegate for profile tap
 //        cell.delegate = self

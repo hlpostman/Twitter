@@ -52,7 +52,7 @@ class TweetCell: UITableViewCell {
     
     func commonInit(tweet: Tweet) {
     
-        // Stings
+        // Strings
         nameLabel.text = tweet.user?.name!
         handleLabel.text = "@\(tweet.user!.screenname!)"
         timeSincePostLabel.text = tweet.formatTimestamp(tweet.rawTimestamp!)
@@ -69,17 +69,17 @@ class TweetCell: UITableViewCell {
         profilPicImageView.clipsToBounds = true
         
         // Button icon for Retweet Button
-        if tweet.retweeted {
-            retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
-        } else {
-            retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
-        }
-        // Button icon for Like Button
-        if tweet.liked {
-            likeButton.setImage(UIImage(named: "favor-icon-red"), for: UIControlState())
-        } else {
-            likeButton.setImage(UIImage(named: "favor-icon"), for: UIControlState())
-        }
+//        if tweet.retweeted {
+//            retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
+//        } else {
+//            retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
+//        }
+//        // Button icon for Like Button
+//        if tweet.liked {
+//            likeButton.setImage(UIImage(named: "favor-icon-red"), for: UIControlState())
+//        } else {
+//            likeButton.setImage(UIImage(named: "favor-icon"), for: UIControlState())
+//        }
         
     }
 
