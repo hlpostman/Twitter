@@ -136,6 +136,17 @@ class TwitterClient: BDBOAuth1SessionManager {
                 completion(error as Error?)
         })
     }
+    
+    func compose(escapedTweet: String, params: NSDictionary?, completion: @escaping (_ error: Error?) -> () ){
+        post("1.1/statuses/update.json?status=\(escapedTweet)", parameters: params, success: { (operation: URLSessionDataTask!, response: Any?) -> Void in
+            print("tweeted: \(escapedTweet)")
+            completion(nil)
+            }, failure: { (operation: URLSessionDataTask?, error: Error?) -> Void in
+                print("Couldn't compose")
+                completion(error as Error?)
+            }
+        )
+    }
 }
 
 
