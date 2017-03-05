@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var user: User!
     var tweet: Tweet!
@@ -57,20 +57,48 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.recentTweets?.count ?? 0
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCell
+        
+        // Configure cell
+        let tweet = recentTweets[indexPath.row]
+        cell.tweet = tweet
+        cell.nameLabel.text = tweet.user?.name!
+        cell.handleLabel.text = "@\(tweet.user!.screenname!)"
+        cell.tweetTextLabel.text = tweet.text!
+        cell.profilPicImageView.setImageWith(tweet.user?.profileURL as! URL)
+        cell.profilPicImageView.layer.cornerRadius = 2
+        cell.profilPicImageView.clipsToBounds = true
+        cell.timeSincePostLabel.text = tweet.formatTimestamp(tweet.rawTimestamp!)
+        cell.replyCountLabel.text = ""
+        
+        cell.selectionStyle = .none
+        
+        // Set retweet icon
+        cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
+        cell.retweetCountLabel.text = String(tweet.retweetCount)
+        
+        cell.likeButton.setImage(UIImage(named: "favor-icon"), for: UIControlState())
+        
+        cell.likesCountLabel.text = String(tweet.likeCount)
+        
+        // Set delegate for profile tap
+//        cell.delegate = self
+        cell.tag = indexPath.row
+        return cell
+    }
+
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
