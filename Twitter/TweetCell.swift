@@ -54,7 +54,7 @@ class TweetCell: UITableViewCell {
     
         // Stings
         nameLabel.text = tweet.user?.name!
-        handleLabel.text = "@\(tweet.user?.screenname!)"
+        handleLabel.text = "@\(tweet.user!.screenname!)"
         timeSincePostLabel.text = tweet.formatTimestamp(tweet.rawTimestamp!)
         tweetTextLabel.text = tweet.text!
         replyCountLabel.text = ""
