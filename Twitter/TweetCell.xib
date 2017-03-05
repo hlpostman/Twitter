@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TweetCell" customModule="Twitter" customModuleProvider="target">
+        <view contentMode="scaleAspectFit" id="iN0-l3-epB" customClass="TweetCell" customModule="Twitter" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -91,6 +91,7 @@
                 <constraint firstItem="dcF-bP-gdg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iVV-wt-nqp" secondAttribute="bottom" constant="4" id="IxH-Mm-32a"/>
                 <constraint firstAttribute="bottom" secondItem="hia-xs-rdQ" secondAttribute="bottom" constant="24" id="PXa-gD-VQV"/>
                 <constraint firstItem="z8X-T5-72M" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="49" id="ShE-2j-1qv"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iVV-wt-nqp" secondAttribute="trailing" constant="4" id="TQO-mq-CYN"/>
                 <constraint firstAttribute="bottom" secondItem="dcF-bP-gdg" secondAttribute="bottom" constant="24" id="YlF-r0-eTX"/>
                 <constraint firstItem="CqO-gw-oGh" firstAttribute="centerY" secondItem="Yt1-dq-DXG" secondAttribute="centerY" id="Yso-gZ-l3h"/>
                 <constraint firstItem="jo3-ml-jb9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="33" id="a6I-ai-bNF"/>
