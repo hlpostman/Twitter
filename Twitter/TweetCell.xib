@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TweetCell" customModule="Twitter" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -111,6 +111,19 @@
                 <constraint firstItem="jo3-ml-jb9" firstAttribute="leading" secondItem="FkC-k3-FmK" secondAttribute="trailing" constant="8" id="tlq-1W-9Ps"/>
                 <constraint firstItem="f5z-De-VU3" firstAttribute="leading" secondItem="hia-xs-rdQ" secondAttribute="trailing" constant="8" id="vcv-FD-EbV"/>
             </constraints>
+            <connections>
+                <outlet property="handleLabel" destination="sSc-sK-LSD" id="Mv7-KO-g1x"/>
+                <outlet property="likeButton" destination="hia-xs-rdQ" id="GXX-6I-HGc"/>
+                <outlet property="likesCountLabel" destination="f5z-De-VU3" id="g8t-H8-6cY"/>
+                <outlet property="nameLabel" destination="jo3-ml-jb9" id="4b9-1k-dbP"/>
+                <outlet property="profilPicImageView" destination="FkC-k3-FmK" id="K3V-pC-CKv"/>
+                <outlet property="replyCountLabel" destination="saG-MD-ylb" id="2fe-gY-mtE"/>
+                <outlet property="replyIconImageView" destination="z8X-T5-72M" id="kzD-n2-5ga"/>
+                <outlet property="retweetButton" destination="Yt1-dq-DXG" id="zre-OF-Cyw"/>
+                <outlet property="retweetCountLabel" destination="CqO-gw-oGh" id="zLY-9a-a4l"/>
+                <outlet property="timeSincePostLabel" destination="Yif-gh-oyC" id="Iz9-X2-Su9"/>
+                <outlet property="tweetTextLabel" destination="iVV-wt-nqp" id="aBC-LT-sSU"/>
+            </connections>
             <point key="canvasLocation" x="77" y="59"/>
         </view>
     </objects>
