@@ -12,6 +12,7 @@ class ProfileViewController: UIViewController {
 
     var user: User!
     var tweet: Tweet!
+    var recentTweets: [Tweet]!
     
     @IBOutlet weak var bannerImageView: UIImageView!
     @IBOutlet weak var profilePicImageView: UIImageView!
@@ -41,6 +42,18 @@ class ProfileViewController: UIViewController {
         if user.profileBannerImageURL != nil {
         bannerImageView.setImageWith(user.profileBannerImageURL as! URL)
         }
+        
+        
+        TwitterClient.sharedInstance!.recentTweetsFromUser(success: { (tweets: [Tweet]) in
+            
+            self.recentTweets = tweets // self for persistence
+//            self.tableView.reloadData()
+            print("😍We got this user's recent tweets")
+            
+            }, failure: { (error: Error?) -> () in
+                print(error!.localizedDescription)
+        })
+        
         // Do any additional setup after loading the view.
     }
 

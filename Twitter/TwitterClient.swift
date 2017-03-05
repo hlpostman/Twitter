@@ -95,6 +95,22 @@ class TwitterClient: BDBOAuth1SessionManager {
         })
     }
     
+    
+    func recentTweetsFromUser(success: @escaping ([Tweet]) -> (), failure: @escaping (Error) -> ()) {
+        
+        get("1.1/statuses/user_timeline.json", parameters: nil, progress: nil, success: { (task: URLSessionDataTask, response: Any?) -> Void in
+            
+            let dictionaries = response as! [NSDictionary]
+            let tweets = Tweet.tweetsWithArray(dictionaries: dictionaries)
+            
+            
+            success(tweets)
+            }, failure: { (task: URLSessionDataTask?, error: Error) -> Void in
+                failure(error)
+        })
+    }
+    
+    
     func retweet(id: Int, params: NSDictionary?, completion: @escaping (_ error: Error?) -> ()) {
         post("1.1/statuses/retweet/\(id).json", parameters: params, success: {(operation: URLSessionDataTask!, response: Any?) -> Void in
             print("Retweeted tweet with id: \(id)")
