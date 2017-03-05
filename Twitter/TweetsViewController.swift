@@ -62,15 +62,19 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
 //        // Set retweet icon
         if tweet.retweeted {
+            print("Retweet button should have green icon")
             cell.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
         } else {
+            print("Retweet button should have grey icon")
             cell.retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
         }
 
 //        // Set like icon
         if tweet.liked {
+            print("Like button should have red icon")
             cell.likeButton.setImage(UIImage(named: "favor-icon-red"), for: UIControlState())
         } else {
+            print("Like button should have grey icon")
             cell.likeButton.setImage(UIImage(named: "favor-icon"), for: UIControlState())
         }
         
