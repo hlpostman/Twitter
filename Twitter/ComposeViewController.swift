@@ -10,7 +10,8 @@ import UIKit
 
 class ComposeViewController: UIViewController {
 
-    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var composeTweetTextField: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +23,17 @@ class ComposeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onSendButton(_ sender: AnyObject) {
+        let tweetText = composeTweetTextField.text
+        
+        TwitterClient.sharedInstance?.compose(tweetText: tweetText!, params: nil, completion: { (error) -> () in
+            print("Composing")
+            print(error?.localizedDescription)
+            })
+    }
 
+    
+    
     /*
     // MARK: - Navigation
 
