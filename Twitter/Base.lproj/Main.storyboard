@@ -198,6 +198,11 @@
                                 <action selector="onLogoutButton:" destination="UJO-zv-fEk" id="QBW-J6-a8N"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Tweet" id="LpM-LK-sDb">
+                            <connections>
+                                <segue destination="DjE-rz-A6F" kind="show" id="a9X-LK-Pr4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Enb-6I-Ll5" id="4s3-dy-i7H"/>
@@ -573,7 +578,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1a5-XT-ZKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4102" y="-333"/>
+            <point key="canvasLocation" x="5040.8000000000002" y="-333.28335832083962"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s2j-8e-j47">
@@ -593,6 +598,25 @@
             </objects>
             <point key="canvasLocation" x="1720.8" y="122.78860569715144"/>
         </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="taY-Js-Mj3">
+            <objects>
+                <viewController id="DjE-rz-A6F" customClass="ComposeViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R7u-8C-q6F"/>
+                        <viewControllerLayoutGuide type="bottom" id="T5e-sS-Bjm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6vq-s0-JVh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7ou-zn-wn3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fjh-d6-r5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3383.1999999999998" y="-565.36731634182911"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="CGB-sQ-5KL">
             <objects>
@@ -609,7 +633,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBN-p7-IuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3366" y="-333"/>
+            <point key="canvasLocation" x="4304.8000000000002" y="-333.28335832083962"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mFs-70-72U">
@@ -629,6 +653,24 @@
             </objects>
             <point key="canvasLocation" x="3876" y="529"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8jz-JE-OmN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W37-uP-0em" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9he-0o-uxd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DjE-rz-A6F" kind="relationship" relationship="rootViewController" id="IFb-bN-FG3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oKc-Kg-La5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2444" y="-565.36731634182911"/>
+        </scene>
     </scenes>
     <resources>
         <image name="TwitterLogo" width="120" height="120"/>
@@ -638,5 +680,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xVj-RG-O9D"/>
+        <segue reference="a9X-LK-Pr4"/>
     </inferredMetricsTieBreakers>
 </document>
