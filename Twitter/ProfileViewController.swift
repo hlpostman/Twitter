@@ -43,6 +43,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         bannerImageView.setImageWith(user.profileBannerImageURL as! URL)
         }
         
+       
+        //        tableView.delegate = self
+        //        tableView.dataSource = self
+        //        tableView.rowHeight = UITableViewAutomaticDimension
+        //        tableView.estimatedRowHeight = 120
         
         TwitterClient.sharedInstance!.recentTweetsFromUser(success: { (tweets: [Tweet]) in
             
