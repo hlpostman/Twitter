@@ -42,6 +42,45 @@ class TweetCell: UITableViewCell {
     
     weak var delegate: TweetTableViewCellDelegate?
     
-
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+    func commonInit(tweet: Tweet) {
+    
+        // Stings
+        nameLabel.text = tweet.user?.name!
+        handleLabel.text = "@\(tweet.user?.screenname!)"
+        timeSincePostLabel.text = tweet.formatTimestamp(tweet.rawTimestamp!)
+        tweetTextLabel.text = tweet.text!
+        replyCountLabel.text = ""
+        
+        // Numbers
+        retweetCountLabel.text = String(tweet.retweetCount)
+        likesCountLabel.text = String(tweet.likeCount)
+        
+        // Images
+        profilPicImageView.setImageWith(tweet.user?.profileURL as! URL)
+        profilPicImageView.layer.cornerRadius = 2
+        profilPicImageView.clipsToBounds = true
+        
+        // Button icon for Retweet Button
+        if tweet.retweeted {
+            retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
+        } else {
+            retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
+        }
+        // Button icon for Like Button
+        if tweet.liked {
+            likeButton.setImage(UIImage(named: "favor-icon-red"), for: UIControlState())
+        } else {
+            likeButton.setImage(UIImage(named: "favor-icon"), for: UIControlState())
+        }
+        
+    }
 
 }
