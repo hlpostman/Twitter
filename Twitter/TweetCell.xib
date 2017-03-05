@@ -98,12 +98,12 @@
                 <constraint firstItem="Yt1-dq-DXG" firstAttribute="leading" secondItem="saG-MD-ylb" secondAttribute="trailing" constant="36" id="cOG-tZ-LN3"/>
                 <constraint firstAttribute="trailing" secondItem="Yif-gh-oyC" secondAttribute="trailing" constant="4" id="dX4-RT-cia"/>
                 <constraint firstAttribute="bottom" secondItem="f5z-De-VU3" secondAttribute="bottom" constant="24" id="eHs-iX-YLI"/>
-                <constraint firstItem="dcF-bP-gdg" firstAttribute="leading" secondItem="CqO-gw-oGh" secondAttribute="trailing" constant="36" id="ffS-kZ-0yj"/>
                 <constraint firstAttribute="bottom" secondItem="CqO-gw-oGh" secondAttribute="bottom" constant="24" id="fuU-7F-7Dg"/>
                 <constraint firstItem="iVV-wt-nqp" firstAttribute="top" secondItem="jo3-ml-jb9" secondAttribute="bottom" constant="8" id="g80-pw-ytd"/>
                 <constraint firstAttribute="bottom" secondItem="z8X-T5-72M" secondAttribute="bottom" constant="24" id="io8-Nx-2ta"/>
                 <constraint firstItem="saG-MD-ylb" firstAttribute="leading" secondItem="z8X-T5-72M" secondAttribute="trailing" constant="8" id="j8W-su-B2g"/>
                 <constraint firstItem="CqO-gw-oGh" firstAttribute="leading" secondItem="Yt1-dq-DXG" secondAttribute="trailing" constant="8" id="m1J-17-bFg"/>
+                <constraint firstItem="dcF-bP-gdg" firstAttribute="leading" secondItem="z8X-T5-72M" secondAttribute="trailing" constant="30" id="o32-dX-Gab"/>
                 <constraint firstItem="Yif-gh-oyC" firstAttribute="baseline" secondItem="sSc-sK-LSD" secondAttribute="baseline" id="rUy-S5-f4J"/>
                 <constraint firstItem="sSc-sK-LSD" firstAttribute="baseline" secondItem="jo3-ml-jb9" secondAttribute="baseline" id="seY-ML-rqU"/>
                 <constraint firstItem="saG-MD-ylb" firstAttribute="centerY" secondItem="z8X-T5-72M" secondAttribute="centerY" id="tKx-Pd-eFq"/>
