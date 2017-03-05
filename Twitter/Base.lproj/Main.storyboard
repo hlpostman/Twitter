@@ -200,7 +200,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Tweet" id="LpM-LK-sDb">
                             <connections>
-                                <segue destination="DjE-rz-A6F" kind="show" id="a9X-LK-Pr4"/>
+                                <segue destination="DjE-rz-A6F" kind="show" identifier="composeSegue" id="a9X-LK-Pr4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -609,9 +609,21 @@
                     <view key="view" contentMode="scaleToFill" id="6vq-s0-JVh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zl7-hT-chm">
+                                <frame key="frameInset" minX="166" minY="161" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="7ou-zn-wn3"/>
+                    <connections>
+                        <outlet property="testLabel" destination="Zl7-hT-chm" id="HUx-sv-Ets"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fjh-d6-r5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

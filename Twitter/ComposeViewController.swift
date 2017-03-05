@@ -10,6 +10,7 @@ import UIKit
 
 class ComposeViewController: UIViewController {
 
+    @IBOutlet weak var testLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

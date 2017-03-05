@@ -165,6 +165,10 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
             detailViewController.tweet = tweetData
             
+        } else if (segue.identifier == "composeSegue") {
+            print("Called composeSegue")
+            let composeViewController = segue.destination as! ComposeViewController
+//            composeViewController.testLabel.text = "Successfully segued and sent this string from the tweets view controller to this compose view controller"
         }
     }
     
