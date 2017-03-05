@@ -12,6 +12,7 @@ class User: NSObject {
     var name: String?
     var screenname: String?
     var profileURL: NSURL?
+    var profileTextColor: String?
     var tagline: String?
     var profileBannerImageURL: NSURL?
     var tweetsCount: Int
@@ -27,6 +28,7 @@ class User: NSObject {
         name = dictionary["name"] as? String
         screenname = dictionary["screen_name"] as? String
         tagline = dictionary["description"] as? String
+        profileTextColor = dictionary["profile_text_color"] as? String
         
         // Numbers
         tweetsCount = dictionary["statuses_count"] as! Int

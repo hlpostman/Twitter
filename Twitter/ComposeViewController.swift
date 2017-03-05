@@ -25,8 +25,8 @@ class ComposeViewController: UIViewController {
     
     @IBAction func onSendButton(_ sender: AnyObject) {
         let tweetText = composeTweetTextField.text
-        
-        TwitterClient.sharedInstance?.compose(tweetText: tweetText!, params: nil, completion: { (error) -> () in
+        let paramsDict: NSDictionary = NSDictionary(dictionary: ["status" : tweetText!])
+        TwitterClient.sharedInstance?.compose(tweetText: tweetText!, params: paramsDict, completion: { (error) -> () in
             print("Composing")
             print(error?.localizedDescription)
             })

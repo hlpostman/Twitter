@@ -138,7 +138,7 @@ class TwitterClient: BDBOAuth1SessionManager {
     }
     
     func compose(tweetText: String, params: NSDictionary?, completion: @escaping (_ error: Error?) -> () ){
-        post("1.1/statuses/update.json?status=\(tweetText)", parameters: params, success: { (operation: URLSessionDataTask!, response: Any?) -> Void in
+        post("1.1/statuses/update.json", parameters: params, success: { (operation: URLSessionDataTask!, response: Any?) -> Void in
             print("tweeted: \(tweetText)")
             completion(nil)
             }, failure: { (operation: URLSessionDataTask?, error: Error?) -> Void in
